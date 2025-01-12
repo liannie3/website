@@ -9,13 +9,47 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #F7F4EE;
+    --foreground: #111F5B;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Solanel', Arial, Helvetica, sans-serif;
+  font-weight: 300; 
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Solanel', Arial, Helvetica, sans-serif;
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: 'Solanel';
+  src: url('fonts/SolanelLight.woff2') format('woff2'),
+      url('fonts/SolanelLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Solanel';
+  src: url('fonts/SolanelRegular.woff2') format('woff2'),
+      url('fonts/SolanelRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Solanel';
+  src: url('fonts/SolanelBold.woff2') format('woff2'),
+      url('fonts/SolanelBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
