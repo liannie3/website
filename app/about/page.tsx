@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation';
 export default function Home() {
   const pathname = usePathname();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-20 gap-16 sm:p-4 font-solanel">
-      <header className="">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-8 gap-16 sm:p-4 font-solanel">
+      <header className="px-4">
         <div className="grid grid-cols-10 w-full">
           <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center">
             <Image
@@ -19,19 +19,20 @@ export default function Home() {
             />
             <Link 
               href="/" passHref
-              className="inline-block a11y-focus">ANNIE LI
+              className="hidden sm:inline-block a11y-focus">ANNIE LI
             </Link>
           </div>
-          <div className="col-start-8 col-span-3">
+          <div className="col-start-7 col-span-4">
             <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-full justify-end">
               <Link 
                 href="/projects" passHref
-                className={`inline-block a11y-focus ${pathname === '/projects' ? 'font-bold' : ''}`}
+                className={`inline-block a11y-focus group ${pathname === '/projects' ? 'font-bold' : ''}`}
               >PROJECTS
+              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
               </Link>
               <Link 
                 href="/visuals" passHref
-                className={`inline-block a11y-focus ${pathname === '/visuals' ? 'font-bold' : ''}`}
+                className={`inline-block a11y-focus whitespace-nowrap ${pathname === '/visuals' ? 'font-bold' : ''}`}
               >VISUAL ARTS
               </Link>
               <Link 
@@ -90,52 +91,38 @@ export default function Home() {
         </div>
       </main>
       
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="px-4">
+        <div className="grid grid-cols-10 w-full">
+          <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center space-x-1 mb-0">
+            <a 
+              href="https://www.linkedin.com/in/liannie3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-block a11y-focus">LINKEDIN, 
+              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
+            </a>
+            <Link 
+              href="/Annie_Li_Resume.pdf"
+              target="_blank"
+              className="inline-block a11y-focus group">RESUME, 
+              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
+            </Link>
+            <a 
+              href="https://github.com/liannie3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block a11y-focus group">GITHUB
+              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
+            </a>
+          </div>
+          <div className="col-start-1 col-span-4 md:col-start-7 md:col-span-4 ml-auto flex items-center space-x-1 sm:space-x-1 w-full sm:justify-end">
+            <span className="whitespace-nowrap">SAY HI!</span>
+              <Link 
+                href="mailto:liannie003@gmail.com"
+                className="cursor-[url('/mail.svg'), pointer] inline-block a11y-focus group">LIANNIE003@GMAIL.COM
+              </Link>
+          </div>
+        </div>
       </footer>
     </div>
   );
