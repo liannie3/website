@@ -119,7 +119,7 @@ export default function Home() {
             <span className="whitespace-nowrap">SAY HI!</span>
               <Link 
                 href="mailto:liannie003@gmail.com"
-                className="cursor-[url('/mail.svg'), pointer] inline-block a11y-focus group">LIANNIE003@GMAIL.COM
+                className="cursor-mail inline-block a11y-focus group">LIANNIE003@GMAIL.COM
               </Link>
           </div>
         </div>
