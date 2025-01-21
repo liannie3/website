@@ -55,10 +55,11 @@ export default function Home() {
         <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 items-center">
           <div className="flex flex-col gap-4">
             <p className="">
-            🎣 Make screen resizing not look awful<br></br>
-            🎣 Make horizontal padding consistent between header/body/footer<br></br>
-            🎣 Implement Projects template<br></br>
-            🎣 Implement Visual Arts template<br></br>
+            🐟 Make screen resizing not look awful<br></br>
+            🐟 Make horizontal padding consistent between header/body/footer<br></br>
+            🐟 Implement Projects template<br></br>
+            🐟 Implement Visual Arts template<br></br>
+            🎣 <s>Implement About page</s><br></br>
             </p>
           </div>
         </section>
