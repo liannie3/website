@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 export default function Home() {
   const pathname = usePathname();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-8 gap-8 px-32 sm:p-4 font-solanel">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-8 gap-8 px-4 sm:p-4 font-solanel">
       <header className="px-4">
         <div className="grid grid-cols-10 w-full">
           <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center">
@@ -44,10 +44,9 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className="flex flex-col gap-0 row-start-2 items-center px-72 sm:items-start">
-        <section className="justify-start">
-          <h1 className="text-8xl">About</h1>
-        </section>
+      
+      <main className="flex flex-col gap-0 row-start-2 items-center w-[700px] sm:items-start">
+        
         <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 ml-auto items-center">
           <div className="flex flex-col gap-4">
             <p className="">
@@ -70,7 +69,7 @@ export default function Home() {
       </main>
       
       <footer className="px-4">
-        <div className="grid grid-cols-10 w-full px-24">
+        <div className="grid grid-cols-10 w-full">
           <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center space-x-1 mb-0">
             <a 
               href="https://www.linkedin.com/in/liannie3"

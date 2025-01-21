@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 export default function Home() {
   const pathname = usePathname();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-8 gap-8 px-32 sm:p-4 font-solanel">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-8 gap-0 px-32 sm:p-4 font-solanel">
       <header className="px-4">
         <div className="grid grid-cols-10 w-full">
           <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center">
