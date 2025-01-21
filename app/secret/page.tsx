@@ -57,12 +57,11 @@ export default function Home() {
             <p className="">
             🎣 Make screen resizing not look awful<br></br>
             🎣 Make horizontal padding consistent between header/body/footer<br></br>
-            🎣 Finish Projects<br></br>
-            🎣 Finish Visual Arts<br></br>
+            🎣 Implement Projects template<br></br>
+            🎣 Implement Visual Arts template<br></br>
             </p>
           </div>
         </section>
-        
       </main>
       
       <footer className="px-4">
