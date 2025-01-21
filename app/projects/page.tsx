@@ -10,13 +10,17 @@ export default function Home() {
       <header className="px-4">
         <div className="grid grid-cols-10 w-full">
           <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center">
-            <Image
-              src="/icon.png"
-              alt="icon"
-              width={24}
-              height={24}
-              className="mr-2"
-            />
+           <Link
+              href="/secret" passHref
+              className="inline-block a11y-focus">
+              <Image
+                src="/icon.png"
+                alt="icon"
+                width={24}
+                height={24}
+                className="mr-2"
+              />
+            </Link>
             <Link 
               href="/" passHref
               className="hidden sm:inline-block a11y-focus">ANNIE LI
@@ -28,7 +32,6 @@ export default function Home() {
                 href="/projects" passHref
                 className={`inline-block a11y-focus group ${pathname === '/projects' ? 'font-bold' : ''}`}
               >PROJECTS
-              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
               </Link>
               <Link 
                 href="/visuals" passHref

@@ -49,16 +49,20 @@ export default function Home() {
       </header>
       
       <main className="flex flex-col gap-0 row-start-2 items-center w-[700px] gap-[8px] sm:items-start">
-      <section className="justify-start">
-          <h1 className="text-8xl">Illustration</h1>
+        <section className="justify-start">
+          <h1 className="text-8xl">To-Do</h1>
         </section>
         <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 items-center">
           <div className="flex flex-col gap-4">
             <p className="">
-            Under construction!
+            🎣 Make screen resizing not look awful<br></br>
+            🎣 Make horizontal padding consistent between header/body/footer<br></br>
+            🎣 Finish Projects<br></br>
+            🎣 Finish Visual Arts<br></br>
             </p>
           </div>
         </section>
+        
       </main>
       
       <footer className="px-4">
