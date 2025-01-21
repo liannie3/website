@@ -55,7 +55,7 @@ export default function Home() {
             <p className="">
             Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University. My current interests are hardware security and machine learning, especially the intersection of the two. I’m also organizing hackathons at <u>TAMUhack</u>, researching at the <u>SETH Lab</u>, and incoming at <u>HPE</u> for summer 2025.
             </p>
-            <p>In my free time I like drawing, cooking, and visiting cafes. I tend to pursue random ventures that pique my interest--whether it’s baking, embroidery, or learning the guitar. My most recent one was creating this website!
+            <p>In my free time I like drawing, cooking, and visiting cafes. I tend to pursue random ventures that pique my interest--whether it’s baking, learning the guitar, or creating this website!
             
             </p>
           </div>
