@@ -53,7 +53,7 @@ export default function Home() {
         <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 ml-auto items-center">
           <div className="flex flex-col gap-4">
             <p className="">
-            Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University. My current interests are hardware security and machine learning, especially the intersection of the two. I’m also organizing hackathons at <u>TAMUhack</u>, researching at the <u>SETH Lab</u>, and incoming at <u>HPE</u> for summer 2025.
+            Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University. My current interests are VLSI design (specifically in the physical design and verification fields) and machine learning, especially the intersection of the two. I’m also organizing hackathons at <a href="https://tamuhack.org" target="_blank"><u>TAMUhack</u></a>, researching at the <a href="https://seth.engr.tamu.edu/" target="_blank"><u>SETH Lab</u></a>, and incoming at <a href="https://www.hpe.com/us/en/home" target="_blank"><u>HPE</u></a> for summer 2025.
             </p>
             <p>In my free time I like drawing, cooking, and visiting cafes. I tend to pursue random ventures that pique my interest--whether it’s baking, learning the guitar, or creating this website!
             
