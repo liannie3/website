@@ -1,52 +1,13 @@
 "use client";
+
+import Header from "@/components/Header";
 import Link from 'next/link';
 import Image from "next/image";
-import { usePathname } from 'next/navigation';
 
 export default function Home() {
-  const pathname = usePathname();
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-8 gap-8 px-4 sm:p-4 font-solanel">
-      <header className="px-4">
-        <div className="grid grid-cols-10 w-full">
-          <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center">
-            <Link
-              href="/secret" passHref
-              className="sm:inline-block a11y-focus">
-              <Image
-                src="/icon.png"
-                alt="icon"
-                width={24}
-                height={24}
-                className="mr-2"
-              />
-            </Link>
-            <Link 
-              href="/" passHref
-              className="hidden sm:inline-block a11y-focus">ANNIE LI
-            </Link>
-          </div>
-          <div className="col-start-7 col-span-4">
-            <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-full justify-end">
-              <Link 
-                href="/projects" passHref
-                className={`inline-block a11y-focus group ${pathname === '/projects' ? 'font-bold' : ''}`}
-              >PROJECTS
-              </Link>
-              <Link 
-                href="/visuals" passHref
-                className={`inline-block a11y-focus whitespace-nowrap ${pathname === '/visuals' ? 'font-bold' : ''}`}
-              >VISUAL ARTS
-              </Link>
-              <Link 
-                href="/about" passHref
-                className={`inline-block a11y-focus ${pathname === '/about' ? 'font-bold' : ''}`}
-              >ABOUT
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
       
       <main className="flex flex-col gap-0 row-start-2 items-center w-[700px] sm:items-start">
         
@@ -56,7 +17,7 @@ export default function Home() {
               Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University. My current interests are VLSI design (specifically in the physical design and verification fields) and machine learning, especially the intersection of the two. I’m also organizing hackathons at <a href="https://tamuhack.org" target="_blank"><u>TAMUhack</u></a>, researching at the <a href="https://seth.engr.tamu.edu/" target="_blank"><u>SETH Lab</u></a>, and incoming at <a href="https://www.hpe.com/us/en/home" target="_blank"><u>HPE</u></a> for summer 2025.
             </p>
             <p>
-              In my free time I like drawing, cooking, and visiting cafes. I tend to pursue random ventures that pique my interest--whether it’s baking, learning the guitar, or creating this website!
+              In my free time I like drawing, cooking, and visiting cafes. 
             </p>
           </div>
           <div className="">

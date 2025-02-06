@@ -55,7 +55,7 @@ export default function Home() {
             alt="annie"
             width={600}
             height={400}
-            className="mr-2"
+            className="mr-2 opacity-95"
           />
           </div>
         </section>
