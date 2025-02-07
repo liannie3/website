@@ -1,7 +1,5 @@
 "use client";
 import Header from "@/components/Header";
-import Link from 'next/link';
-import Image from "next/image";
 import Footer from "@/components/Footer";
 
 export default function Home() {
