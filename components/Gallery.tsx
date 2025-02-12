@@ -5,9 +5,14 @@ import { useState } from "react";
 const images = [
     "/gallery/fence1.jpg",
     "/gallery/fence2.png",
+    "/gallery/fence3.png",
+    "/gallery/annie.png",
     "/gallery/pearls.jpg",
-    "/gallery/ping.jpeg",
+    "/gallery/google.png",
     "/gallery/sitting.jpeg",
+    "/gallery/hk.png",
+    "/gallery/chongqing.png",
+    "/gallery/ping.jpeg",
     "/revrodeo.gif",
   ];
 
