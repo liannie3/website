@@ -20,7 +20,7 @@ const images = [
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     return (
-        <div className="columns-1 md:columns-2 gap-4">
+        <div className="columns-2 md:columns-2 gap-4">
             {images.map((src, index) => (
                 <div key={index} className="mb-4 break-inside-avoid cursor-pointer relative" onClick={() => setSelectedImage(src)}>
                     <Image 
