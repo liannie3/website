@@ -10,7 +10,7 @@ export default function Home() {
       <div className="grid grid-rows-[20px_1fr_20px] w-full max-w-[740px] mx-auto items-center justify-items-center min-h-screen p-4 pb-8 gap-8 sm:p-4 font-solanel">
         <Header />
       
-      <main className="flex flex-col gap-0 row-start-2 items-center sm:items-start w-full">
+      <main className="flex flex-col gap-2 row-start-2 items-center sm:items-start w-full">
       <section className="justify-start flex">
           <h1 className="text-8xl">Illustration</h1>
           <Image
