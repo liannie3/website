@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-    <footer className="px-4">
-        <div className="grid grid-cols-10 w-full">
+    <footer className="w-full">
+        <div className="flex gap-[8px] row-start-3 justify-between items-center w-full sm:items-start">
           <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center space-x-1 mb-0">
             <a 
               href="https://www.linkedin.com/in/liannie3"

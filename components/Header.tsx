@@ -6,18 +6,18 @@ import { usePathname } from "next/navigation";
 export default function Header() {
     const pathname = usePathname();
     return (
-    <header className="px-4">
-        <div className="grid grid-cols-10 w-full">
-          <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center">
+    <header className="w-full">
+        <div className="flex flex-row gap-[8px] row-start-1 justify-between items-center w-full sm:items-start">
+          <div className="flex items-center">
            <Link
               href="/secret" passHref
               className="inline-block a11y-focus">
               <Image
-                src="/icon.png"
+                src="/icon.svg"
                 alt="icon"
-                width={24}
-                height={24}
-                className="mr-2"
+                width={28}
+                height={28}
+                className="mr-1"
               />
             </Link>
             <Link 
@@ -25,7 +25,7 @@ export default function Header() {
               className="hidden sm:inline-block a11y-focus">ANNIE LI
             </Link>
           </div>
-          <div className="col-start-7 col-span-4">
+          <div className="flex flex-row">
             <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-full justify-end">
               <Link 
                 href="/projects" passHref

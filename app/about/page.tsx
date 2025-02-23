@@ -6,32 +6,32 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-8 gap-8 px-4 sm:p-4 font-solanel">
-      <Header />
-      
-      <main className="flex flex-col gap-0 row-start-2 items-center w-[700px] sm:items-start">
-        
-        <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 ml-auto items-center">
-          <div className="flex flex-col gap-4">
-            <p className="">
-              Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University. My current interests are VLSI design (specifically in the physical design and verification fields) and machine learning. I’m also organizing hackathons at <a href="https://tamuhack.org" target="_blank"><u>TAMUhack</u></a>, researching at the <a href="https://seth.engr.tamu.edu/" target="_blank"><u>SETH Lab</u></a>, and incoming at <a href="https://www.hpe.com/us/en/home" target="_blank"><u>HPE</u></a> for summer 2025.
-            </p>
-            <p>
-              In my free time I like drawing, cooking, and visiting cafes!
-            </p>
-          </div>
-          <div className="">
-            <Image
-              src="/annie.png"
-              alt="annie"
-              width={700}
-              height={1400}
-              className="mr-2"
-            />
-          </div>
-        </section>
-      </main>
-      <Footer />
+    <div className="flex items-center justify-center min-h-screen w-full gap-4">
+      <div className="grid grid-rows-[20px_1fr_20px] w-full max-w-[740px] mx-auto items-center justify-items-center min-h-screen p-4 pb-8 gap-8 sm:p-4 font-solanel">
+        <Header />
+          <main className="flex flex-col gap-0 row-start-2 items-center sm:items-start w-full">
+            <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 items-center">
+              <div className="flex flex-col gap-4">
+                <p className="">
+                  Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University. My current interests are VLSI design (specifically in the physical design and verification fields) and machine learning. I’m also organizing hackathons at <a href="https://tamuhack.org" target="_blank"><u>TAMUhack</u></a>, researching at the <a href="https://seth.engr.tamu.edu/" target="_blank"><u>SETH Lab</u></a>, and incoming at <a href="https://www.hpe.com/us/en/home" target="_blank"><u>HPE</u></a> for summer 2025.
+                </p>
+                <p>
+                  In my free time I like drawing, cooking, and visiting cafes!
+                </p>
+              </div>
+              <div className="">
+                <Image
+                  src="/annie.png"
+                  alt="annie"
+                  width={700}
+                  height={1400}
+                  className="mr-2"
+                />
+              </div>
+            </section>
+          </main>
+        <Footer />
+      </div>
     </div>
   );
 }
