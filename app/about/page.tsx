@@ -19,13 +19,13 @@ export default function Home() {
                   In my free time I like drawing, cooking, and visiting cafes!
                 </p>
               </div>
-              <div className="">
+              <div className="w-[200px] sm:w-[550px]">
                 <Image
                   src="/annie.png"
                   alt="annie"
                   width={700}
                   height={1400}
-                  className="mr-2"
+                  className="w-full h-auto mr-2"
                 />
               </div>
             </section>
