@@ -14,9 +14,9 @@ export default function Home() {
               <Image
                 src="/revrodeo.gif"
                 alt="annie"
+                width={600}
+                height={400}
                 className="mr-2 opacity-95"
-                fill
-                layout="intrinsic"
               />
               </div>
             </section>
