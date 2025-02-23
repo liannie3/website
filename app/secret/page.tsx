@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Task from "@/components/Task";
 
 export default function Home() {
   return (
@@ -16,66 +16,34 @@ export default function Home() {
         <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 items-center">
           <div className="flex flex-col gap-4 items-center">
             <div className="">
-              <div className="flex items-center">
-                <Image
-                    src="/fish.svg"
-                    alt="icon"
-                    width={22}
-                    height={22}
-                    className="mr-2"
-                  />
-                Make screen resizing not look awful<br></br>
-              </div>
-              <div className="flex items-center">
-                <Image
-                    src="/fish.svg"
-                    alt="icon"
-                    width={22}
-                    height={22}
-                    className="mr-2"
-                  />
-                Make horizontal padding consistent between header/body/footer<br></br>
-              </div>
-              <div className="flex items-center">
-                <Image
-                    src="/fish.svg"
-                    alt="icon"
-                    width={22}
-                    height={22}
-                    className="mr-2"
-                  />
-                Implement Projects template<br></br>
-              </div>
-              <div className="flex items-center">
-                <Image
-                    src="/fish.svg"
-                    alt="icon"
-                    width={22}
-                    height={22}
-                    className="mr-2"
-                  />
-                Implement Visual Arts gallery template<br></br>
-              </div>
-              <div className="flex items-center">
-                <Image
-                    src="/fish.svg"
-                    alt="icon"
-                    width={22}
-                    height={22}
-                    className="mr-2"
-                  />
-                Implement each subsection of Visual Arts<br></br>
-              </div>
-              <div className="flex items-center">
-                <Image
-                    src="/fishingpole.svg"
-                    alt="icon"
-                    width={22}
-                    height={22}
-                    className="mr-2"
-                  />
-                <s>Implement About page</s><br></br>
-              </div>
+              <Task
+                status={"notdone"}
+                task={"Improve mobile layout"}
+              />
+              <Task
+                status={"notdone"}
+                task={"Implement Projects template"}
+              />
+              <Task
+                status={"notdone"}
+                task={"Implement Visuals gallery template"}
+              />
+              <Task
+                status={"notdone"}
+                task={"Implement Visuals subsections"}
+              />
+              <Task
+                status={"done"}
+                task={"Make horizontal padding consistent between header/body/footer"}
+              />
+              <Task
+                status={"done"}
+                task={"Make screen resizing not look awful"}
+              />
+              <Task
+                status={"done"}
+                task={"Implement About page"}
+              />
             </div>
           </div>
         </section>
