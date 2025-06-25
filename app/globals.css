@@ -12,6 +12,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-weight: 300; 
+  font-size: 17px;
 }
 
 h1 {
