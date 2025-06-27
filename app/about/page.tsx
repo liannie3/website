@@ -6,8 +6,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen w-full gap-4">
-      <div className="grid grid-rows-[20px_1fr_20px] w-full max-w-[760px] mx-auto items-center justify-items-center min-h-screen p-4 pb-8 gap-8 sm:p-4 font-solanel">
+    <div className="flex items-center justify-center w-full gap-4">
+      <div className="grid grid-rows-[20px_1fr_20px] w-full max-w-[770px] mx-auto items-center justify-items-center min-h-screen p-4 pb-8 gap-8 sm:p-4 font-solanel">
         <Header />
           <main className="flex flex-col gap-2 row-start-2 items-center sm:items-start w-full">
             <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 items-center">
@@ -19,7 +19,7 @@ export default function Home() {
                   In my free time I like drawing, cooking, and visiting cafes!
                 </p>
               </div>
-              <div className="w-[200px] sm:w-[550px]">
+              <div className="w-[160px] sm:w-[500px]">
                 <Image
                   src="/annie.png"
                   alt="annie"
