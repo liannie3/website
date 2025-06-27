@@ -7,13 +7,21 @@ const images = [
     "/gallery/fence2.png",
     "/gallery/fence3.png",
     "/gallery/annie.png",
-    "/gallery/pearls.jpg",
+    "/gallery/baseball.PNG",
+    "/gallery/chicago.JPEG",
+    "/gallery/diver1.PNG",
+    "/gallery/diver2.jpg",
+    "/gallery/fiya.JPEG",
     "/gallery/google.png",
     "/gallery/sitting.jpeg",
     "/gallery/hk.png",
     "/gallery/chongqing.png",
     "/gallery/ping.jpeg",
+    "/gallery/revicon.jpeg",
+    "/gallery/revlogo.jpeg",
     "/revrodeo.gif",
+    "/gallery/tigerrun.GIF",
+    "/gallery/revwalk.GIF"
   ];
 
   export default function Gallery() {

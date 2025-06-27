@@ -14,7 +14,7 @@ export default {
       },
       fontFamily: {
         solanel: ['Solanel', 'sans-serif'],
-      },
+      }
     },
   },
   plugins: [],
