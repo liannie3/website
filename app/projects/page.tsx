@@ -15,7 +15,7 @@ export default function Home() {
             <h1 className="text-8xl">Projects</h1>
           </section>
           <section className="flex flex-col max-w-full gap-8 sm:gap-4 items-start">
-            <div className="flex flex-col gap-4 justify-start">
+            <div className="flex flex-col justify-start">
               <div className="">
                 <Image
                   src="/gallery/projects/tritonebg.png"
@@ -38,8 +38,8 @@ export default function Home() {
                     <Image
                       src="/github-icon.svg"
                       alt="github icon"
-                      width={28}
-                      height={28}
+                      width={24}
+                      height={24}
                       className=""
                     />
                   </Link>
@@ -49,7 +49,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-4 justify-start">
+            <div className="flex flex-col justify-start">
               <div className="">
                 <Image
                   src="/gallery/projects/mergebg.png"
