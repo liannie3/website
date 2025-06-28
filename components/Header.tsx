@@ -10,19 +10,29 @@ export default function Header() {
         <div className="flex flex-row gap-[8px] row-start-1 justify-between items-center w-full sm:items-start">
           <div className="flex items-center">
            <Link
-              href="/secret" passHref
-              className="inline-block a11y-focus">
+            href="/secret"
+            passHref
+            className="inline-block a11y-focus group">
+            <div className="relative w-[28px] h-[28px] mr-1">
               <Image
-                src="/icon.svg"
+                src="/icon-v2.svg"
                 alt="icon"
-                width={28}
-                height={28}
-                className="mr-1"
+                fill
+                className="transition-opacity duration-200 opacity-100 group-hover:opacity-0"
               />
-            </Link>
+              <Image
+                src="/darkicon.svg"
+                alt="icon"
+                fill
+                className="transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+              />
+            </div>
+          </Link>
+
             <Link 
               href="/" passHref
-              className="hidden sm:inline-block a11y-focus">ANNIE LI
+              className="hidden sm:inline-block a11y-focus group">ANNIE LI
+              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
             </Link>
           </div>
           <div className="flex flex-row">
@@ -31,16 +41,19 @@ export default function Header() {
                 href="/projects" passHref
                 className={`inline-block a11y-focus group ${pathname === '/projects' ? 'font-bold' : ''}`}
               >PROJECTS
+              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
               </Link>
               <Link 
                 href="/visuals" passHref
-                className={`inline-block a11y-focus whitespace-nowrap ${pathname === '/visuals' ? 'font-bold' : ''}`}
+                className={`inline-block a11y-focus group whitespace-nowrap ${pathname === '/visuals' ? 'font-bold' : ''}`}
               >VISUAL ARTS
+              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
               </Link>
               <Link 
                 href="/about" passHref
-                className={`inline-block a11y-focus ${pathname === '/about' ? 'font-bold' : ''}`}
+                className={`inline-block a11y-focus group ${pathname === '/about' ? 'font-bold' : ''}`}
               >ABOUT
+              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
               </Link>
             </nav>
           </div>

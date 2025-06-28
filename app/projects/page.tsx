@@ -14,9 +14,14 @@ export default function Home() {
           <section className="justify-start">
             <h1 className="text-8xl">Projects</h1>
           </section>
-          <section className="flex flex-col max-w-full gap-8 sm:gap-4 items-start">
+          <section className="flex flex-col max-w-[450px] gap-8 sm:gap-4 items-start">
             <div className="flex flex-col justify-start">
               <div className="">
+                <Link
+                    href="https://github.com/skandrigi/hackutd24"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="">
                 <Image
                   src="/gallery/projects/tritonebg.png"
                   alt="Tritone"
@@ -24,6 +29,7 @@ export default function Home() {
                   height={1400}
                   className="w-full h-auto"
                 />
+                </Link>
                 </div>
               <div className="flex flex-col w-full">
                 <div className="flex flex-row w-full justify-between">
@@ -34,13 +40,13 @@ export default function Home() {
                     href="https://github.com/skandrigi/hackutd24"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block a11y-focus">
+                    className="">
                     <Image
                       src="/github-icon.svg"
                       alt="github icon"
-                      width={24}
-                      height={24}
-                      className=""
+                      width={26}
+                      height={26}
+                      className="mt-1"
                     />
                   </Link>
                 </div>
@@ -51,6 +57,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-start">
               <div className="">
+                <Link
+                    href="https://github.com/skandrigi/hackutd24"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block a11y-focus">
                 <Image
                   src="/gallery/projects/mergebg.png"
                   alt="Tritone"
@@ -58,6 +69,7 @@ export default function Home() {
                   height={1400}
                   className=""
                 />
+                </Link>
                 </div>
               <div className="flex flex-col w-full">
                 <div className="flex flex-row w-full justify-between">
@@ -72,9 +84,9 @@ export default function Home() {
                     <Image
                       src="/github-icon.svg"
                       alt="github icon"
-                      width={28}
-                      height={28}
-                      className=""
+                      width={26}
+                      height={26}
+                      className="mt-1"
                     />
                   </Link>
                 </div>
