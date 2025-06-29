@@ -22,7 +22,8 @@ const images = [
     "/gallery/revlogo.jpeg",
     "/revrodeo.gif",
     "/gallery/tigerrun.GIF",
-    "/gallery/revwalk.GIF"
+    "/gallery/revwalk.GIF",
+    "/idle.GIF"
   ];
 
   export default function Gallery() {

@@ -22,15 +22,15 @@ export default function Home() {
                 />
                 <Task
                   status={"notdone"}
-                  task={"Implement Projects template"}
-                />
-                <Task
-                  status={"notdone"}
-                  task={"Implement Visuals gallery template"}
+                  task={"Work on Projects template"}
                 />
                 <Task
                   status={"notdone"}
                   task={"Implement Visuals subsections"}
+                />
+                <Task
+                  status={"done"}
+                  task={"Implement Visuals gallery template"}
                 />
                 <Task
                   status={"done"}

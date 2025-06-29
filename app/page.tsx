@@ -12,7 +12,7 @@ export default function Home() {
             <section className="flex flex-col gap-4 sm:gap-12">
               <div className="">
               <Image
-                src="/tempcat2.svg"
+                src="/loafer.svg"
                 alt="placeholder cat that sits there and does nothing"
                 width={800}
                 height={600}
