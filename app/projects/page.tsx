@@ -58,7 +58,7 @@ export default function Home() {
             <div className="flex flex-col justify-start">
               <div className="">
                 <Link
-                    href="https://github.com/skandrigi/hackutd24"
+                    href="https://github.com/skandrigi/MergeCLI"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block a11y-focus">
