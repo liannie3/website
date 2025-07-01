@@ -17,6 +17,7 @@ export default function Home() {
                 </p>
                 <p>
                   In my free time I like drawing, cooking, and visiting coffee shops!
+                  In my free time I like drawing, cooking, and visiting coffee shops!
                 </p>
               </div>
               <div className="w-[160px] sm:w-[500px]">
