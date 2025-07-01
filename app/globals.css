@@ -8,6 +8,11 @@
   --font-default: var(--font-solanel), Arial, Helvetica, sans-serif;
 }
 
+.dark {
+  --background: #1f2330;
+  --foreground: #e3d9c8;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
