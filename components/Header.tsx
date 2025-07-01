@@ -32,7 +32,7 @@ export default function Header() {
             <Link 
               href="/" passHref
               className="hidden sm:inline-block a11y-focus group">ANNIE LI
-              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
+              <span className="block h-[1px] bg-foreground w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
             </Link>
           </div>
           <div className="flex flex-row">
@@ -41,19 +41,19 @@ export default function Header() {
                 href="/projects" passHref
                 className={`inline-block a11y-focus group ${pathname === '/projects' ? 'font-bold' : ''}`}
               >PROJECTS
-              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
+              <span className="block h-[1px] bg-foreground w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
               </Link>
               <Link 
                 href="/visuals" passHref
                 className={`inline-block a11y-focus group whitespace-nowrap ${pathname === '/visuals' ? 'font-bold' : ''}`}
               >VISUAL ARTS
-              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
+              <span className="block h-[1px] bg-foreground w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
               </Link>
               <Link 
                 href="/about" passHref
                 className={`inline-block a11y-focus group ${pathname === '/about' ? 'font-bold' : ''}`}
               >ABOUT
-              <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
+              <span className="block h-[1px] bg-foreground w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
               </Link>
             </nav>
           </div>
