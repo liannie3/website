@@ -11,13 +11,13 @@ export default function Home() {
       <Header />
       <main className="flex flex-col flex-grow items-start w-full">
         <section className="justify-start flex">
-          <h1 className="text-6xl sm:text-8xl">Illustration</h1>
+          <h1 className="text-7xl sm:text-8xl">Illustration</h1>
           <Image
             src="/fishs.svg"
             alt="icon"
             width={70}
             height={70}
-            className="ml-4 w-[50px] sm:w-[70px]"
+            className="ml-4 w-[55px] sm:w-[70px]"
           />
         </section>
         <section className="flex flex-col sm:flex-row max-w-full gap-4 sm:gap-12 items-center">

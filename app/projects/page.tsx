@@ -12,7 +12,7 @@ export default function Home() {
         <Header />
         <main className="flex flex-col flex-grow gap-4 items-start w-full">
           <section className="justify-start">
-            <h1 className="text-6xl sm:text-8xl">Projects</h1>
+            <h1 className="text-7xl sm:text-8xl">Projects</h1>
           </section>
           <section className="flex flex-col max-w-[450px] gap-8 items-start">
             <div className="flex flex-col justify-start">
