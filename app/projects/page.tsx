@@ -8,13 +8,13 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen w-full gap-4">
-      <div className="grid grid-rows-[20px_1fr_20px] w-full max-w-[770px] mx-auto items-center justify-items-center min-h-screen p-4 pb-8 gap-8 sm:p-4 font-solanel">
+      <div className="flex flex-col w-full max-w-[770px] mx-auto items-center min-h-dvh p-4 gap-8 font-solanel">
         <Header />
-        <main className="flex flex-col align-top gap-2 row-start-2 items-start w-full">
+        <main className="flex flex-col flex-grow gap-4 items-start w-full">
           <section className="justify-start">
-            <h1 className="text-8xl">Projects</h1>
+            <h1 className="text-6xl sm:text-8xl">Projects</h1>
           </section>
-          <section className="flex flex-col max-w-[450px] gap-8 sm:gap-4 items-start">
+          <section className="flex flex-col max-w-[450px] gap-8 items-start">
             <div className="flex flex-col justify-start">
               <div className="">
                 <Link

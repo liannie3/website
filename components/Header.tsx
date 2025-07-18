@@ -7,7 +7,7 @@ export default function Header() {
     const pathname = usePathname();
     return (
     <header className="w-full">
-        <div className="flex flex-row gap-[8px] row-start-1 justify-between items-center w-full sm:items-start">
+        <div className="flex flex-row gap-[8px] justify-between items-center w-full sm:items-start">
           <div className="flex items-center">
            <Link
             href="/secret"
@@ -31,7 +31,7 @@ export default function Header() {
 
             <Link 
               href="/" passHref
-              className="hidden sm:inline-block a11y-focus group">ANNIE LI
+              className="inline-block a11y-focus group">ANNIE LI
               <span className="block h-[1px] bg-foreground w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
             </Link>
           </div>

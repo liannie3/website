@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function Header() {
     return (
     <footer className="w-full">
-        <div className="flex sm:flex-row flex-col gap-[8px] row-start-3 justify-between items-center w-full sm:items-start">
-          <div className="col-start-1 col-span-4 lg:col-span-3 flex items-center space-x-1 mb-0">
+        <div className="flex flex-col sm:flex-row gap-[8px] items-start sm:justify-between w-full sm:items-start">
+          <div className="flex items-center space-x-1 mb-0">
             <a 
               href="https://www.linkedin.com/in/liannie3"
               target="_blank"
