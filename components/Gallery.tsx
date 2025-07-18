@@ -20,10 +20,10 @@ const images = [
     "/gallery/ping.jpeg",
     "/gallery/revicon.jpeg",
     "/gallery/revlogo.jpeg",
-    "/revrodeo.gif",
+    "/gallery/revrodeo.gif",
     "/gallery/tigerrun.GIF",
     "/gallery/revwalk.GIF",
-    "/idle.GIF"
+    "/gallery/idle.GIF"
   ];
 
   export default function Gallery() {

@@ -7,22 +7,21 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen w-full gap-4">
-      <div className="grid grid-rows-[20px_1fr_20px] w-full max-w-[770px] mx-auto items-center justify-items-center min-h-screen p-4 pb-8 gap-8 sm:p-4 font-solanel">
-        <Header />
-      
-      <main className="flex flex-col gap-2 row-start-2 items-start w-full">
-      <section className="justify-start flex">
-          <h1 className="text-8xl">Illustration</h1>
+      <div className="flex flex-col w-full max-w-[770px] mx-auto items-center min-h-dvh p-4 gap-8 font-solanel">
+      <Header />
+      <main className="flex flex-col flex-grow items-start w-full">
+        <section className="justify-start flex">
+          <h1 className="text-6xl sm:text-8xl">Illustration</h1>
           <Image
             src="/fishs.svg"
             alt="icon"
-            width={80}
-            height={80}
-            className="ml-4"
+            width={70}
+            height={70}
+            className="ml-4 w-[50px] sm:w-[70px]"
           />
         </section>
-        <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 items-center">
-          <div className="flex flex-col gap-4">
+        <section className="flex flex-col sm:flex-row max-w-full gap-4 sm:gap-12 items-center">
+          <div className="flex flex-col gap-2">
             <p className="">
             Illustration, character and life drawings. Under construction!
             </p>

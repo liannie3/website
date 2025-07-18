@@ -7,10 +7,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen w-full gap-4">
-      <div className="grid grid-rows-[20px_1fr_20px] w-full max-w-[770px] mx-auto items-center justify-items-center min-h-screen p-4 pb-8 gap-8 sm:p-4 font-solanel">
+      <div className="flex flex-col w-full max-w-[770px] mx-auto items-center min-h-dvh p-4 gap-8 font-solanel">
         <Header />
-          <main className="flex flex-col gap-2 row-start-2 items-center sm:items-start w-full">
-            <section className="flex flex-col sm:flex-row max-w-full gap-8 sm:gap-12 items-center">
+          <main className="flex flex-col flex-grow gap-2 justify-center w-full">
+            <section className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-center">
               <div className="flex flex-col gap-4">
                 <p className="">
                   Howdy! I’m Annie and I’m an undergraduate student studying Electrical Engineering at Texas A&M University. My current interests are VLSI design (specifically in the digital design and verification fields) and machine learning. I’m also organizing hackathons at <a href="https://tamuhack.org" target="_blank"><u>TAMUhack</u></a>, researching vulnerabilities on hardware at the <a href="https://seth.engr.tamu.edu/" target="_blank"><u>SETH Lab</u></a>, and interning at <a href="https://www.hpe.com/us/en/home" target="_blank"><u>HPE</u></a> for summer 2025.
