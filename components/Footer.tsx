@@ -27,7 +27,7 @@ export default function Header() {
             </a>
           </div>
           <div className="col-start-1 col-span-4 md:col-start-7 md:col-span-4 ml-auto flex items-center space-x-1 sm:space-x-1 w-full sm:justify-end">
-            <span className="whitespace-nowrap">SAY HI!</span>
+            <span className="whitespace-nowrap">Say hi!</span>
               <Link 
                 href="mailto:liannie003@gmail.com"
                 className="cursor-mail inline-block a11y-focus group">LIANNIE003@GMAIL.COM
