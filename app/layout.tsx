@@ -10,6 +10,8 @@ const solanel = localFont({
     { path: '../public/fonts/SolanelRegular.woff2', weight: '500', style: 'normal' },
     { path: '../public/fonts/SolanelLight.woff', weight: '300', style: 'normal' },
     { path: '../public/fonts/SolanelLight.woff2', weight: '300', style: 'normal' },
+    { path: '../public/fonts/SolanelMedium.woff', weight: '600', style: 'normal' },
+    { path: '../public/fonts/SolanelMedium.woff2', weight: '600', style: 'normal' },
     { path: '../public/fonts/SolanelBold.woff', weight: '700', style: 'normal' },
     { path: '../public/fonts/SolanelBold.woff2', weight: '700', style: 'normal' },
   ],
@@ -18,7 +20,7 @@ const solanel = localFont({
 
 export const metadata: Metadata = {
   title: "Annie Li",
-  description: "Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University. ",
+  description: "Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University.",
 };
 
 export default function RootLayout({
