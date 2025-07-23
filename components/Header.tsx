@@ -7,6 +7,7 @@ export default function Header() {
     const pathname = usePathname();
     return (
     <header className="w-full">
+        <h3>
         <div className="flex flex-row gap-[8px] justify-between items-center w-full sm:items-start">
           <div className="flex items-center">
            <Link
@@ -58,6 +59,7 @@ export default function Header() {
             </nav>
           </div>
         </div>
+        </h3>
       </header>
     )
 }
