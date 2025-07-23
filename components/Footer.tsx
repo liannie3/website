@@ -4,6 +4,7 @@ export default function Header() {
     return (
     <footer className="w-full">
         <div className="flex flex-col sm:flex-row gap-[8px] items-start sm:justify-between w-full sm:items-start">
+          <h3>
           <div className="flex items-center space-x-1 mb-0">
             <a 
               href="https://www.linkedin.com/in/liannie3"
@@ -26,12 +27,15 @@ export default function Header() {
               <span className="block h-[1px] bg-[#111f5b] w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
             </a>
           </div>
+          </h3>
           <div className="col-start-1 col-span-4 md:col-start-7 md:col-span-4 ml-auto flex items-center space-x-1 sm:space-x-1 w-full sm:justify-end">
             <span className="whitespace-nowrap">Say hi!</span>
+            <h3>
               <Link 
                 href="mailto:liannie003@gmail.com"
                 className="cursor-mail inline-block a11y-focus group">LIANNIE003@GMAIL.COM
               </Link>
+            </h3>
           </div>
         </div>
       </footer>
