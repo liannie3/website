@@ -16,8 +16,8 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-weight: 400; 
-  font-size: 16px;
+  font-weight: 500; 
+  font-size: 17px;
 }
 
 h1 {
@@ -26,8 +26,7 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
-  
+  font-size: 22px;
 }
 
 h3, h4, h5, h6  {
