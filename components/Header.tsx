@@ -8,13 +8,13 @@ export default function Header() {
     return (
     <header className="w-full">
         <h3>
-        <div className="flex flex-row gap-[8px] justify-between items-center w-full sm:items-start">
+        <div className="flex flex-row gap-[8px] justify-between w-full sm:items-start">
           <div className="flex items-center">
            <Link
             href="/secret"
             passHref
             className="inline-block a11y-focus group">
-            <div className="relative w-[28px] h-[28px] mr-1">
+            <div className="relative w-[26px] h-[26px] mr-1">
               <Image
                 src="/icon-v2.svg"
                 alt="icon"
@@ -22,8 +22,8 @@ export default function Header() {
                 className="transition-opacity duration-200 opacity-100 group-hover:opacity-0"
               />
               <Image
-                src="/darkicon.svg"
-                alt="icon"
+                src="/dark-icon.svg"
+                alt="dark icon"
                 fill
                 className="transition-opacity duration-200 opacity-0 group-hover:opacity-100"
               />
@@ -36,8 +36,8 @@ export default function Header() {
               <span className="block h-[1px] bg-foreground w-0 group-hover:w-full transition-all ease-in-out duration-300"></span>
             </Link>
           </div>
-          <div className="flex flex-row">
-            <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-full justify-end">
+          <div className="flex flex-row items-center">
+            <nav className="ml-auto items-center flex space-x-[8px] md:space-x-[12px] w-full justify-end">
               <Link 
                 href="/projects" passHref
                 className={`inline-block a11y-focus group ${pathname === '/projects' ? 'font-bold' : ''}`}
