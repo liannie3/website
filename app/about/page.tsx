@@ -16,10 +16,13 @@ export default function Home() {
                   Howdy! I’m Annie and I’m an undergraduate student studying Electrical Engineering 
                   at Texas A&M University. I’m primarily interested in VLSI design (specifically 
                   digital design and verification) and embedded systems. I also organize
-                  hackathons at <a href="https://tamuhack.org" target="_blank" style={{ fontWeight: 600 }}>
-                  <>TAMUhack</></a> and 
-                  research vulnerabilities on hardware at 
-                  the <a href="https://seth.engr.tamu.edu/" target="_blank" style={{ fontWeight: 600 }}><>SETH Lab</></a>.
+                  hackathons at <span className="hover-bg">
+                  <a href="https://tamuhack.org" target="_blank" style={{ fontWeight: 500 }}>
+                  <>TAMUhack</></a></span> and research 
+                  vulnerabilities on hardware at 
+                  the <span className="hover-bg">
+                  <a href="https://seth.engr.tamu.edu/" target="_blank" 
+                  style={{ fontWeight: 500 }}><>SETH Lab</></a></span>.
                 </p>
                 <p>
                   In my free time I like drawing, cooking, and visiting coffee shops!

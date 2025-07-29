@@ -30,7 +30,7 @@ h2 {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 15px;
   text-transform: capitalize;
 }
 
@@ -40,4 +40,15 @@ h4, h5, h6  {
 
 .cursor-mail {
   cursor: url('/mail.svg'), pointer;
+}
+
+.hover-bg {
+  padding: 0px 2px;
+  border-radius: 5px;
+  background-color: #eae5db;
+  transition: background-color 0.2s ease;
+}
+
+.hover-bg:hover {
+  background-color: #d8d2c7;
 }
