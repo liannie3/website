@@ -18,11 +18,11 @@ export default function Home() {
                   digital design and verification) and embedded systems. I also organize
                   hackathons at <span className="hover-bg">
                   <a href="https://tamuhack.org" target="_blank" style={{ fontWeight: 500 }}>
-                  <>TAMUhack↗</></a></span> and research 
+                  <>TAMUhack↗&#xFE0E;</></a></span> and research 
                   vulnerabilities on hardware at 
                   the <span className="hover-bg">
                   <a href="https://seth.engr.tamu.edu/" target="_blank" 
-                  style={{ fontWeight: 500 }}><>SETH Lab↗</></a></span>.
+                  style={{ fontWeight: 500 }}><>SETH Lab↗&#xFE0E;</></a></span>.
                 </p>
                 <p>
                   In my free time I like drawing, cooking, and visiting coffee shops!
