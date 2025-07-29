@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex flex-col w-full max-w-[770px] mx-auto items-center min-h-dvh p-4 gap-8 font-solanel">
         <Header />
           <main className="flex flex-col flex-grow gap-2 justify-center w-full">
-            <section className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-center">
+            <section className="flex flex-col sm:flex-row gap-8 sm:gap-20 items-center">
               <div className="flex flex-col gap-4">
                 <p className="">
                   Howdy! I’m Annie and I’m an undergraduate student studying Electrical Engineering 
@@ -18,11 +18,11 @@ export default function Home() {
                   digital design and verification) and embedded systems. I also organize
                   hackathons at <span className="hover-bg">
                   <a href="https://tamuhack.org" target="_blank" style={{ fontWeight: 500 }}>
-                  <>TAMUhack</></a></span> and research 
+                  <>TAMUhack↗</></a></span> and research 
                   vulnerabilities on hardware at 
                   the <span className="hover-bg">
                   <a href="https://seth.engr.tamu.edu/" target="_blank" 
-                  style={{ fontWeight: 500 }}><>SETH Lab</></a></span>.
+                  style={{ fontWeight: 500 }}><>SETH Lab↗</></a></span>.
                 </p>
                 <p>
                   In my free time I like drawing, cooking, and visiting coffee shops!
