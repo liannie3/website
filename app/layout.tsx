@@ -21,6 +21,9 @@ const solanel = localFont({
 export const metadata: Metadata = {
   title: "Annie Li",
   description: "Howdy! I’m Annie Li, an electrical engineering student at Texas A&M University.",
+  icons: {
+    icon: "/favicon.ico"
+  }
 };
 
 export default function RootLayout({
