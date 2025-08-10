@@ -17,6 +17,7 @@ export default function Home() {
                 width={150}
                 height={100}
                 className="opacity-95"
+                loading="eager"
               />
               </div>
             </section>
