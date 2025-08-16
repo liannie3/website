@@ -12,9 +12,9 @@ export default function Home() {
             <section className="flex flex-col">
               <div className="">
               <Image
-                src="/loafer.svg"
+                src="/loafer.webp"
                 alt="placeholder cat that sits there and does nothing"
-                width={150}
+                width={125}
                 height={100}
                 className="opacity-95"
                 loading="eager"
