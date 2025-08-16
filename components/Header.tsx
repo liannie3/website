@@ -20,13 +20,14 @@ export default function Header() {
                 alt="icon"
                 fill
                 className="transition-opacity duration-200 opacity-100 group-hover:opacity-0"
-              />
+                loading="eager"
+                />
               <Image
                 src="/dark-icon.svg"
                 alt="dark icon"
                 fill
                 className="transition-opacity duration-200 opacity-0 group-hover:opacity-100"
-              />
+                />
             </div>
           </Link>
 
