@@ -27,6 +27,7 @@ h1 {
 
 h2 {
   font-size: 22px;
+  
 }
 
 h3 {
@@ -39,7 +40,23 @@ h4, h5, h6  {
 }
 
 .cursor-mail {
-  cursor: url('/mail.svg'), pointer;
+  cursor: url('/custom-mail-icon.svg'), pointer;
+}
+
+.cursor-linkedin {
+  cursor: url('/custom-linkedin-icon.svg'), pointer;
+}
+
+.cursor-resume {
+  cursor: url('/custom-resume-icon.svg'), pointer;
+}
+
+.cursor-github {
+  cursor: url('/custom-github-icon.svg'), pointer;
+}
+
+.cursor-cat {
+  cursor: url('/icon-v3.svg'), pointer;
 }
 
 .hover-bg {
