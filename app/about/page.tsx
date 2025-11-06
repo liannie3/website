@@ -14,18 +14,19 @@ export default function Home() {
               <div className="flex flex-col gap-4">
                 <p className="">
                   Howdy! I’m Annie and I’m an undergraduate student studying Electrical Engineering 
-                  at Texas A&M University. I’m primarily interested in VLSI design (specifically 
-                  digital design and verification) and embedded systems. I also organize
+                  at Texas A&M University. I’m primarily interested in ASIC design/verification and embedded systems development. 
+                  I also organize
                   hackathons at <span className="hover-bg">
                   <a href="https://tamuhack.org" target="_blank" style={{ fontWeight: 500 }}>
                   <>TAMUhack↗&#xFE0E;</></a></span> and research 
-                  vulnerabilities on hardware at 
+                  vulnerabilities on SoC designs at 
                   the <span className="hover-bg">
                   <a href="https://seth.engr.tamu.edu/" target="_blank" 
                   style={{ fontWeight: 500 }}><>SETH Lab↗&#xFE0E;</></a></span>.
                 </p>
                 <p>
-                  In my free time I like drawing, cooking, and visiting coffee shops!
+                  In my free time I like drawing, cooking, playing the piano and guitar 
+                  and visiting coffee shops!
                 </p>
               </div>
               <div className="w-[140px] sm:w-[500px]">
