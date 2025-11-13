@@ -29,6 +29,7 @@ export default function Home() {
                   alt="annie"
                   width={250}
                   height={1000}
+                  loading="eager"
                   className="h-auto transition duration-300 ease hover:scale-105"
                 />
             </section>
