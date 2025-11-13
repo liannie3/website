@@ -10,8 +10,8 @@ export default function Home() {
       <div className="flex flex-col w-full max-w-[770px] mx-auto items-center min-h-dvh p-4 gap-8 font-solanel">
         <Header />
           <main className="flex flex-col flex-grow gap-2 justify-center w-full">
-            <section className="flex flex-col sm:flex-row gap-8 sm:gap-20 items-center">
-              <div className="flex flex-col gap-4">
+            <section className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-center">
+              <div className="flex flex-col w-auto gap-4">
                 <p className="">
                   Howdy! I’m Annie and I’m an undergraduate student studying Electrical Engineering 
                   at Texas A&M University. I’m primarily interested in ASIC design/verification and embedded systems development. 
@@ -25,19 +25,18 @@ export default function Home() {
                   style={{ fontWeight: 500 }}><>SETH Lab↗&#xFE0E;</></a></span>.
                 </p>
                 <p>
-                  In my free time I like drawing, cooking, playing the piano and guitar 
-                  and visiting coffee shops!
+                  Outside of this I'm passionate about anything related to art and design, 
+                  learning new instruments
+                  and trying new coffee shops. 
                 </p>
               </div>
-              <div className="w-[140px] sm:w-[500px]">
-                <Image
-                  src="/annie.png"
+              <Image
+                  src="/annie-sticker.png"
                   alt="annie"
-                  width={700}
-                  height={1400}
-                  className="w-full h-auto"
+                  width={250}
+                  height={1000}
+                  className="h-auto"
                 />
-              </div>
             </section>
           </main>
         <Footer />
