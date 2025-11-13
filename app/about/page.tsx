@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex flex-col w-full max-w-[770px] mx-auto items-center min-h-dvh p-4 gap-8 font-solanel">
         <Header />
           <main className="flex flex-col flex-grow gap-2 justify-center w-full">
-            <section className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-center">
+            <section className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-center">
               <div className="flex flex-col w-auto gap-4">
                 <p className="">
                   Howdy! I’m Annie and I’m an undergraduate student studying Electrical Engineering at Texas A&M University. I’m primarily interested in ASIC design verification and embedded systems development. 
@@ -27,10 +27,10 @@ export default function Home() {
               <Image
                   src="/annie-sticker.png"
                   alt="annie"
-                  width={250}
+                  width={200}
                   height={1000}
                   loading="eager"
-                  className="h-auto transition duration-300 ease hover:scale-105"
+                  className="h-auto mr-4 transition duration-300 ease hover:scale-105"
                 />
             </section>
           </main>
