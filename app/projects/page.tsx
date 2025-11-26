@@ -175,7 +175,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <p className="">
-                  The event website for Texas A&M's beginner hackathon with a colorful skater twist!
+                  The event website for Texas A&M’s beginner hackathon with a colorful skater twist!
                 </p>
               </div>
             </div>
