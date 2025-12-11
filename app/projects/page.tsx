@@ -23,7 +23,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="">
                 <Image
-                  src="/gallery/projects/tritonebg.png"
+                  src="/projects/tritone.png"
                   alt="Tritone"
                   width={300}
                   height={1400}
