@@ -183,7 +183,7 @@ export default function Home() {
             <div className="flex flex-col justify-start">
               <div className="">
                 <Link
-                    href="https://hh25.tamuhack.org"
+                    href="https://th26.tamuhack.org"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block a11y-focus">
