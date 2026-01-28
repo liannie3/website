@@ -13,7 +13,7 @@ export default function Home() {
             <section className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-center">
               <div className="flex flex-col w-auto gap-4">
                 <p className="">
-                  Howdy! I’m Annie and I’m an undergraduate student studying electrical engineering at Texas A&M University. I’m interested in ASIC design verification and firmware architecture and was a hardware intern at <span className="hover-bg">
+                  Howdy! I’m Annie and I’m an undergraduate student studying electrical engineering at Texas A&M University. I’m interested in computer architecture (specifically the design & verification fields) and low-level systems. I was a hardware intern at <span className="hover-bg">
                   <a href="https://hpe.com" target="_blank" style={{ fontWeight: 500 }}>
                   <>HPE↗&#xFE0E;</></a></span> this past summer. I also organize hackathons at <span className="hover-bg">
                   <a href="https://tamuhack.org" target="_blank" style={{ fontWeight: 500 }}>
