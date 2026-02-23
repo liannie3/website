@@ -114,6 +114,24 @@ export default function Home() {
                   />
                 </Link>
               </div>
+            </div>
+            <div className="flex flex-col justify-start">
+              <div className="">
+                <Link
+                  href="https://th26.tamuhack.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="a11y-focus inline-block"
+                >
+                  <Image
+                    src="/projects/th26.png"
+                    alt="TAMUhack 2026"
+                    width={500}
+                    height={1400}
+                    className=""
+                  />
+                </Link>
+              </div>
               <div className="flex w-full flex-col">
                 <div className="flex w-full flex-row justify-between">
                   <h2 className="">TAMUHACK 2026</h2>
