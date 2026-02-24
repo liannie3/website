@@ -181,7 +181,7 @@ export default function Home() {
             <div className="flex flex-col justify-start">
               <div className="">
                 <Link
-                  href="https://draydere.itch.io/heartbreaker"
+                  href="https://heartbreaker.justindtle.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="a11y-focus inline-block"
