@@ -57,11 +57,10 @@ export default function Gallery() {
             <Image
               src={selectedImage}
               alt="Selected"
-              width={0}
-              height={0}
+              width={1200}
+              height={1200}
               sizes="95vw"
-              className="h-auto max-h-[95vh] w-auto max-w-[95vw]"
-              layout="responsive"
+              className="h-auto max-h-[95vh] w-auto max-w-[95vw] object-contain"
             />
           </div>
         </div>
