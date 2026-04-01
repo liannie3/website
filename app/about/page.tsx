@@ -23,7 +23,7 @@ export default function Home() {
                     target="_blank"
                     style={{ fontWeight: 500 }}
                   >
-                    <>TAMUhack↗&#xFE0E;</>
+                    <>TAMUhack↗&#xFE0E;</> {/*test*/}
                   </a>
                 </span>{" "}
                 and research vulnerabilities on processor designs at the{" "}
