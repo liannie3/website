@@ -14,7 +14,7 @@ export default function Header() {
               passHref
               className="a11y-focus group inline-block"
             >
-              <div className="relative mb-1 mr-1.5 h-[22px] w-[22px]">
+              <div className="relative mb-1 mr-1.5 h-[24px] w-[24px]">
                 <Image
                   src="/icon-v4.svg"
                   alt="icon"
@@ -23,7 +23,7 @@ export default function Header() {
                   loading="eager"
                 />
                 <Image
-                  src="/dark-icon.svg"
+                  src="/icon-v4-dark.svg"
                   alt="dark icon"
                   fill
                   className="opacity-0 transition-opacity duration-200 group-hover:opacity-100"
