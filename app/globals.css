@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  ::selection {
+    @apply bg-[#111F5B] text-[#F7F4EE];
+  }
+}
+
 :root {
-  --background: #F7F4EE;
-  --foreground: #111F5B;
+  --background: #f7f4ee;
+  --foreground: #111f5b;
   --font-default: var(--font-solanel), Arial, Helvetica, sans-serif;
 }
 
@@ -16,18 +22,17 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-weight: 500; 
+  font-weight: 500;
   font-size: 17px;
 }
 
 h1 {
-  font-weight: 500; 
+  font-weight: 500;
   letter-spacing: -0.05em;
 }
 
 h2 {
   font-size: 22px;
-  
 }
 
 h3 {
@@ -35,28 +40,30 @@ h3 {
   text-transform: capitalize;
 }
 
-h4, h5, h6  {
-  font-weight: 700; 
+h4,
+h5,
+h6 {
+  font-weight: 700;
 }
 
 .cursor-mail {
-  cursor: url('/custom-mail-icon.svg'), pointer;
+  cursor: url("/custom-mail-icon.svg"), pointer;
 }
 
 .cursor-linkedin {
-  cursor: url('/custom-linkedin-icon.svg'), pointer;
+  cursor: url("/custom-linkedin-icon.svg"), pointer;
 }
 
 .cursor-resume {
-  cursor: url('/custom-resume-icon.svg'), pointer;
+  cursor: url("/custom-resume-icon.svg"), pointer;
 }
 
 .cursor-github {
-  cursor: url('/custom-github-icon.svg'), pointer;
+  cursor: url("/custom-github-icon.svg"), pointer;
 }
 
 .cursor-cat {
-  cursor: url('/icon-v3.svg'), pointer;
+  cursor: url("/icon-v3.svg"), pointer;
 }
 
 .hover-bg {
