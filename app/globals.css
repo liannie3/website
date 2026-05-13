@@ -24,6 +24,7 @@ body {
   background: var(--background);
   font-weight: 500;
   font-size: 17px;
+  text-wrap: balance;
 }
 
 h1 {
