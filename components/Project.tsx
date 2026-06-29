@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import Link from "next/link";
 import { ReactNode } from "react";
 
@@ -8,9 +7,11 @@ interface ProjectProps {
   year?: string;
   desc: ReactNode;
   imgUrl: string;
+  imgAlt?: string; // Added to support "Dream Weaver" in your Home component
   projectUrl: string;
-  githubUrl?: string;
-  itchUrl?: string;
+  iconSrc?: string;
+  iconAlt?: string;
+  iconUrl?: string;
 }
 
 function Project({
@@ -18,9 +19,11 @@ function Project({
   year,
   desc,
   imgUrl,
+  imgAlt,
   projectUrl,
-  githubUrl,
-  itchUrl,
+  iconSrc,
+  iconAlt,
+  iconUrl,
 }: ProjectProps) {
   return (
     <div className="flex flex-col justify-start">
@@ -33,7 +36,7 @@ function Project({
         >
           <Image
             src={imgUrl}
-            alt={title}
+            alt={imgAlt || title}
             width={300}
             height={1400}
             className="mb-1 h-auto w-full"
@@ -46,22 +49,12 @@ function Project({
             <div className="inline uppercase">{title}</div>
             {year && <span> / {year}</span>}
           </h2>
-          {githubUrl && (
-            <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+
+          {iconUrl && iconSrc && (
+            <Link href={iconUrl} target="_blank" rel="noopener noreferrer">
               <Image
-                src="/github-icon.svg"
-                alt="github icon"
-                width={26}
-                height={26}
-                className="mt-1"
-              />
-            </Link>
-          )}
-          {itchUrl && (
-            <Link href={itchUrl} target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/itchio-logo.svg"
-                alt="itch.io icon"
+                src={iconSrc}
+                alt={iconAlt || "Project icon"}
                 width={26}
                 height={26}
                 className="mt-1"
