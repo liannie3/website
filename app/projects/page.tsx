@@ -3,9 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Project from "@/components/Project";
 
-import Link from "next/link";
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="w-full bg-background text-foreground">
