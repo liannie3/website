@@ -7,7 +7,7 @@ interface ProjectProps {
   year?: string;
   desc: ReactNode;
   imgUrl: string;
-  imgAlt?: string; // Added to support "Dream Weaver" in your Home component
+  imgAlt?: string;
   projectUrl: string;
   iconSrc?: string;
   iconAlt?: string;
@@ -37,9 +37,9 @@ function Project({
           <Image
             src={imgUrl}
             alt={imgAlt || title}
-            width={300}
-            height={1400}
-            className="mb-1 h-auto w-full"
+            width={800}
+            height={450}
+            className="mb-1 h-auto w-full object-cover"
           />
         </Link>
       </div>
