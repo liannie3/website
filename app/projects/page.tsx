@@ -11,7 +11,7 @@ export default function Home() {
     <div className="w-full bg-background text-foreground">
       <div className="mx-auto flex min-h-dvh w-full max-w-[770px] flex-col items-center gap-8 p-4 font-solanel">
         <Header />
-        <main className="flex w-full flex-grow flex-col items-start gap-4">
+        <main className="stagger-wrapper flex w-full flex-grow flex-col items-start gap-4">
           <section className="justify-start">
             <h1 className="text-7xl">Projects</h1>
           </section>
