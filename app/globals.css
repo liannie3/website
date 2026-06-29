@@ -80,8 +80,8 @@ h6 {
 
 @keyframes loadSection {
   from {
-    opacity: 0.5;
-    transform: translateY(4px);
+    opacity: 0;
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -91,15 +91,18 @@ h6 {
 
 .stagger-wrapper > * {
   opacity: 0;
-  animation: loadSection 0.1s ease-out forwards;
+  animation: loadSection 0.07s forwards;
 }
 
+.stagger-wrapper > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
 .stagger-wrapper > *:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 0.35s;
 }
 .stagger-wrapper > *:nth-child(3) {
-  animation-delay: 0.4s;
+  animation-delay: 0.6s;
 }
 .stagger-wrapper > *:nth-child(4) {
-  animation-delay: 0.6s;
+  animation-delay: 0.85s;
 } /*add as needed for more children*/
