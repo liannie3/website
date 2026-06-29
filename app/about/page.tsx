@@ -9,7 +9,7 @@ export default function Home() {
     <div className="w-full bg-background text-foreground">
       <div className="mx-auto flex min-h-dvh w-full max-w-[770px] flex-col items-center gap-8 p-4 font-solanel">
         <Header />
-        <main className="flex w-full flex-grow flex-col justify-center gap-2">
+        <main className="stagger-wrapper flex w-full flex-grow flex-col justify-center gap-2">
           <section className="flex flex-col items-center gap-8 sm:flex-row sm:gap-12">
             <div className="flex w-auto flex-col gap-4">
               <p className="">
