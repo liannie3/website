@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 const images = [
+  "/gallery/mock_trial.gif",
   "/gallery/latios.png",
   "/gallery/fence1.jpg",
   "/gallery/fence2.png",
