@@ -81,27 +81,25 @@ h6 {
 @keyframes loadSection {
   from {
     opacity: 0;
-    transform: translateY(6px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .stagger-wrapper > * {
   opacity: 0;
-  animation: loadSection 0.07s forwards;
+  animation: loadSection 0.6s forwards ;
 }
 
 .stagger-wrapper > *:nth-child(1) {
   animation-delay: 0.1s;
 }
 .stagger-wrapper > *:nth-child(2) {
-  animation-delay: 0.35s;
+  animation-delay: 0.2s;
 }
 .stagger-wrapper > *:nth-child(3) {
-  animation-delay: 0.6s;
+  animation-delay: 0.3s;
 }
 .stagger-wrapper > *:nth-child(4) {
   animation-delay: 0.85s;
