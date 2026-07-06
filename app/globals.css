@@ -23,20 +23,20 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-weight: 500;
-  font-size: 17px;
+  font-size: 18px;
   text-wrap: balance;
 }
 
-h1 {
+h1 { /*page titles*/
   font-weight: 500;
   letter-spacing: -0.05em;
 }
 
-h2 {
+h2 { /*project titles*/
   font-size: 22px;
 }
 
-h3 {
+h3 { /* header and footer links*/
   font-size: 16px;
   text-transform: capitalize;
 }
