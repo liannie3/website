@@ -104,3 +104,14 @@ h6 {
 .stagger-wrapper > *:nth-child(4) {
   animation-delay: 0.85s;
 } /*add as needed for more children*/
+
+
+.gallery-item {
+  opacity: 0;
+  animation: loadSection 0.6s forwards;
+}
+
+.gallery-static .gallery-item {
+  opacity: 1;
+  animation: none;
+}

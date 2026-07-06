@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const images = [
   "/gallery/mock_trial.gif",
@@ -27,25 +27,41 @@ const images = [
   "/gallery/idle.GIF",
 ];
 
+let introPlayed = false;
+
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [skipIntro] = useState(() => introPlayed);
+  useEffect(() => {
+    introPlayed = true;
+  }, []);
+
+  const columns = [
+    images.filter((_, i) => i % 2 === 0),
+    images.filter((_, i) => i % 2 === 1),
+  ];
 
   return (
-    <div className="columns-2 gap-4 md:columns-2">
-      {images.map((src, index) => (
-        <div
-          key={index}
-          className="relative mb-4 cursor-pointer break-inside-avoid"
-          onClick={() => setSelectedImage(src)}
-        >
-          <Image
-            src={src}
-            alt={`Image ${index + 1}`}
-            width={300}
-            height={0}
-            className="h-auto w-full object-cover"
-          />
-          <div className="absolute inset-0 overflow-hidden bg-[hsl(0,0%,0.4%,0.15)] opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
+    <div className={`flex gap-4${skipIntro ? " gallery-static" : ""}`}>
+      {columns.map((column, colIndex) => (
+        <div key={colIndex} className="flex flex-1 flex-col gap-4">
+          {column.map((src, rowIndex) => (
+            <div
+              key={src}
+              className="gallery-item relative cursor-pointer"
+              style={{ animationDelay: `${0.25 + rowIndex * 0.15}s` }}
+              onClick={() => setSelectedImage(src)}
+            >
+              <Image
+                src={src}
+                alt={`Image ${rowIndex * 2 + colIndex + 1}`}
+                width={300}
+                height={0}
+                className="h-auto w-full object-cover"
+              />
+              <div className="absolute inset-0 overflow-hidden bg-[hsl(0,0%,0.4%,0.15)] opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
+            </div>
+          ))}
         </div>
       ))}
 

@@ -9,7 +9,7 @@ export default function Home() {
     <div className="w-full bg-background text-foreground">
       <div className="mx-auto flex min-h-dvh w-full max-w-[770px] flex-col items-center gap-8 p-4 font-solanel">
         <Header />
-        <main className="stagger-wrapper flex w-full flex-grow flex-col items-start gap-2">
+        <main className="flex w-full flex-grow flex-col items-start gap-2">
           <section className="flex justify-start">
             <h1 className="text-7xl">Illustration</h1>
             <Image
@@ -27,7 +27,7 @@ export default function Home() {
               </p>
             </div>
           </section>
-          <section className="flex flex-col items-start gap-4">
+          <section className="gallery-section flex flex-col items-start gap-4">
             <Gallery />
           </section>
         </main>
