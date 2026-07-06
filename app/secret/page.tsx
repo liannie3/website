@@ -8,7 +8,7 @@ export default function Home() {
     <div className="bg-background text-foreground w-full">
       <div className="flex flex-col w-full max-w-[770px] mx-auto items-center min-h-dvh p-4 gap-8 font-solanel">
         <Header />
-        <main className="stagger-wrapper flex flex-col flex-grow gap-2 justify-center items-start w-full">
+        <main className="flex flex-col flex-grow gap-2 justify-center items-start w-full">
           <section className="justify-start">
             <h1 className="text-8xl">To-Do</h1>
           </section>
