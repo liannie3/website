@@ -12,6 +12,7 @@ interface ProjectProps {
   iconSrc?: string;
   iconAlt?: string;
   iconUrl?: string;
+  index?: number;
 }
 
 function Project({
@@ -24,9 +25,13 @@ function Project({
   iconSrc,
   iconAlt,
   iconUrl,
+  index = 0,
 }: ProjectProps) {
   return (
-    <div className="flex flex-col justify-start">
+    <div
+      className="project-card flex flex-col justify-start"
+      style={{ animationDelay: `${0.25 + index * 0.15}s` }}
+    >
       <div className="">
         <Link
           href={projectUrl}
