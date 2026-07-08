@@ -27,15 +27,10 @@ const images = [
   "/gallery/idle.GIF",
 ];
 
-// Module-scoped, so it survives client-side navigation between pages but resets
-// on a full page load (first open / reload) — exactly when we want the intro.
 let introPlayed = false;
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  // Snapshot the flag at mount: play the fade only if it hasn't played yet this
-  // document. useEffect never runs during SSR, so the server always renders the
-  // animating state and hydration matches on a fresh load.
   const [skipIntro] = useState(() => introPlayed);
   useEffect(() => {
     introPlayed = true;
