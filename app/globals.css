@@ -96,3 +96,13 @@ h6 {
   opacity: 1;
   animation: none;
 }
+
+.project-card {
+  opacity: 0;
+  animation: loadSection 0.6s forwards;
+}
+
+.projects-static .project-card {
+  opacity: 1;
+  animation: none;
+}
