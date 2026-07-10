@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from 'next/font/local'
 import { Analytics } from "@vercel/analytics/react"
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 
 const solanel = localFont({
@@ -36,7 +38,13 @@ export default function RootLayout({
       <body
         className={`${solanel.variable} antialiased`}
       >
-        {children}
+        <div className="w-full bg-background text-foreground">
+          <div className="mx-auto flex min-h-dvh w-full max-w-[770px] flex-col items-center gap-8 p-4 font-solanel">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </div>
         <Analytics />
       </body>
     </html>
