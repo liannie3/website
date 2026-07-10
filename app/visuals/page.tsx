@@ -18,7 +18,7 @@ export default function Home() {
       <section className="flex max-w-full flex-col items-center gap-4 sm:flex-row sm:gap-12">
         <div className="flex flex-col gap-2">
           <p className="">
-            Illustration, character and life drawings. Under construction!
+            Illustration, animation and life drawings. Under construction!
           </p>
         </div>
       </section>
