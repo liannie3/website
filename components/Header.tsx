@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="w-full">
       <h3>
-        <div className="flex w-full flex-row justify-between gap-[8px] sm:items-start">
+        <div className="flex w-full flex-row justify-between items-start gap-[8px]">
           <div className="flex items-center">
             <Link
               href="/secret"
@@ -53,12 +53,11 @@ export default function Header() {
               </svg>
             </Link>
           </div>
-          <div className="flex flex-row items-center">
-            <nav className="ml-auto flex w-full items-center justify-end space-x-[8px] md:space-x-[12px]">
+          <nav className="flex flex-col items-end sm:flex-row sm:items-center space-x-[8px] md:space-x-[12px]">
               <Link
                 href="/projects"
                 passHref
-                className={`a11y-focus group inline-block ${pathname === "/projects" ? "font-bold" : ""}`}
+                className={`a11y-focus group ${pathname === "/projects" ? "font-bold" : ""}`}
               >
                 Projects
                 <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
@@ -66,7 +65,7 @@ export default function Header() {
               <Link
                 href="/visuals"
                 passHref
-                className={`a11y-focus group inline-block whitespace-nowrap ${pathname === "/visuals" ? "font-bold" : ""}`}
+                className={`a11y-focus group whitespace-nowrap ${pathname === "/visuals" ? "font-bold" : ""}`}
               >
                 Visual Arts
                 <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
@@ -74,14 +73,13 @@ export default function Header() {
               <Link
                 href="/about"
                 passHref
-                className={`a11y-focus  group inline-block ${pathname === "/about" ? "font-bold" : ""}`}
+                className={`a11y-focus group ${pathname === "/about" ? "font-bold" : ""}`}
               >
                 About
                 <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
               </Link>
             </nav>
           </div>
-        </div>
       </h3>
     </header>
   );
