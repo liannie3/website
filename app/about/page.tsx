@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Arrow from "@/components/Arrow";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
                 target="_blank"
                 style={{ fontWeight: 500 }}
               >
-                <>TAMUhack↗&#xFE0E;</>
+                <>TAMUhack<Arrow /></>
               </a>
             </span>{" "}
             and research vulnerabilities on processor designs at the{" "}
@@ -27,7 +28,7 @@ export default function Home() {
                 target="_blank"
                 style={{ fontWeight: 500 }}
               >
-                <>SETH Lab↗&#xFE0E;</>
+                <>SETH Lab<Arrow /></>
               </a>
             </span>
             .
