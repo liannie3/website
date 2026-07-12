@@ -60,7 +60,7 @@ export default function Header() {
                 passHref
                 className={`a11y-focus group inline-block ${pathname === "/projects" ? "font-bold" : ""}`}
               >
-                PROJECTS
+                Projects
                 <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
               </Link>
               <Link
@@ -68,15 +68,15 @@ export default function Header() {
                 passHref
                 className={`a11y-focus group inline-block whitespace-nowrap ${pathname === "/visuals" ? "font-bold" : ""}`}
               >
-                VISUAL ARTS
+                Visual Arts
                 <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
               </Link>
               <Link
                 href="/about"
                 passHref
-                className={`a11y-focus group inline-block ${pathname === "/about" ? "font-bold" : ""}`}
+                className={`a11y-focus  group inline-block ${pathname === "/about" ? "font-bold" : ""}`}
               >
-                ABOUT
+                About
                 <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
               </Link>
             </nav>

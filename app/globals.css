@@ -36,9 +36,13 @@ h2 { /*project titles*/
   font-size: 22px;
 }
 
-h3 { /* header and footer links*/
+h3 {
   font-size: 16px;
-  text-transform: capitalize;
+}
+
+nav { /*header footer links*/
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 h4,
