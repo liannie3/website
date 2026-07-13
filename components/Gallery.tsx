@@ -1,33 +1,10 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
-const images = [
-  "/gallery/mock_trial.mp4",
-  "/gallery/latios.webp",
-  "/gallery/fence1.webp",
-  "/gallery/fence2.webp",
-  "/gallery/fence3.webp",
-  "/gallery/annie.webp",
-  "/gallery/baseball.webp",
-  "/gallery/chicago.webp",
-  "/gallery/diver1.webp",
-  "/gallery/diver2.webp",
-  "/gallery/fiya.webp",
-  "/gallery/cruise.webp",
-  "/gallery/google.webp",
-  "/gallery/hk.webp",
-  "/gallery/chongqing.webp",
-  "/gallery/ping.webp",
-  "/gallery/sitting.webp",
-  "/gallery/revicon.webp",
-  "/gallery/revlogo.webp",
-  "/gallery/revrodeo.mp4",
-  "/gallery/tigerrun.mp4",
-  "/gallery/revwalk.mp4",
-  "/gallery/idle.mp4",
-];
+import images from "./gallery.json";
 
 const isVideo = (src: string) => src.endsWith(".mp4");
+
+const GALLERY_SIZES = "(max-width: 768px) 45vw, 360px";
 
 let introPlayed = false;
 
@@ -47,16 +24,18 @@ export default function Gallery() {
     <div className={`flex gap-4${skipIntro ? " gallery-static" : ""}`}>
       {columns.map((column, colIndex) => (
         <div key={colIndex} className="flex flex-1 flex-col gap-4">
-          {column.map((src, rowIndex) => (
+          {column.map((item, rowIndex) => (
             <div
-              key={src}
+              key={item.src}
               className="gallery-item relative cursor-pointer"
               style={{ animationDelay: `${0.25 + rowIndex * 0.15}s` }}
-              onClick={() => setSelectedImage(src)}
+              onClick={() => setSelectedImage(item.src)}
             >
-              {isVideo(src) ? (
+              {isVideo(item.src) ? (
                 <video
-                  src={src}
+                  src={item.src}
+                  width={item.w}
+                  height={item.h}
                   autoPlay
                   loop
                   muted
@@ -65,10 +44,11 @@ export default function Gallery() {
                 />
               ) : (
                 <Image
-                  src={src}
+                  src={item.src}
                   alt={`Image ${rowIndex * 2 + colIndex + 1}`}
-                  width={300}
-                  height={0}
+                  width={item.w}
+                  height={item.h}
+                  sizes={GALLERY_SIZES}
                   className="h-auto w-full object-cover"
                 />
               )}
