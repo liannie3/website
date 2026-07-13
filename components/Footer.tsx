@@ -4,8 +4,8 @@ import Arrow from "@/components/Arrow";
 export default function Footer() {
     return (
     <footer className="w-full">
-      <div className="flex flex-col gap-[0.2em] items-start w-full sm:flex-row sm:justify-between">
-        <div className="flex gap-[0.3em] text-[16px] uppercase">
+      <div className="flex flex-col gap-1 items-start w-full sm:flex-row sm:justify-between">
+        <div className="flex gap-1 text-[16px] uppercase">
           <a 
             href="https://github.com/liannie3"
             target="_blank"
@@ -24,7 +24,7 @@ export default function Footer() {
             className="cursor-resume a11y-focus group">Resume<span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
           </Link>
         </div>
-        <address className="flex gap-[0.3em] whitespace-nowrap text-[16px] not-italic">Say hi!<Link 
+        <address className="flex gap-1 whitespace-nowrap text-[16px] not-italic">Say hi!<Link 
               href="mailto:liannie003@gmail.com"
               className="cursor-mail uppercase a11y-focus group"
               target="_blank">liannie003@gmail.com<span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
