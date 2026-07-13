@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gen:gallery": "node scripts/gen-gallery.mjs"
   },
   "dependencies": {
     "@next/font": "^14.2.15",

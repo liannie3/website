@@ -12,3 +12,9 @@ if [ ! -d "$root/node_modules/sharp" ]; then
 fi
 
 node "$root/.githooks/optimize-images.mjs"
+
+if git diff --cached --name-only | grep -q '^public/gallery/'; then
+  node "$root/scripts/gen-gallery.mjs" && git add "$root/components/gallery.json"
+fi
+
+exit 0
