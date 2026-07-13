@@ -30,8 +30,7 @@ export default function Header() {
               />
             </div>
           </Link>
-          <h1 aria-label="Annie Li - home">
-            <Link href="/" passHref className="a11y-focus">
+            <Link href="/" passHref aria-label="Annie Li - home" className="a11y-focus">
               <svg
                 viewBox="0 0 52 11"
                 className="block h-[18px] w-[85px]"
@@ -51,9 +50,8 @@ export default function Header() {
                 <circle cx="26.8667" cy="0.866667" r="0.866667" fill="currentColor" />
               </svg>
             </Link>
-          </h1>
         </div>
-        <nav className="flex flex-col items-end sm:flex-row sm:items-center sm:gap-[0.7em]">
+        <nav className="flex flex-col items-end sm:flex-row sm:items-center gap-1 sm:gap-4">
             <Link
               href="/projects"
               passHref
