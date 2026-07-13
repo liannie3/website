@@ -5,7 +5,7 @@ export default function Footer() {
     return (
     <footer className="w-full">
       <div className="flex flex-col gap-[0.2em] items-start w-full sm:flex-row sm:justify-between">
-        <div className="flex gap-[0.3em] uppercase">
+        <div className="flex gap-[0.3em] text-[16px] uppercase">
           <a 
             href="https://github.com/liannie3"
             target="_blank"
