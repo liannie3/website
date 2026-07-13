@@ -27,7 +27,7 @@ export default function Footer() {
         <address className="flex gap-1 whitespace-nowrap text-[16px] not-italic">Say hi!<Link 
               href="mailto:liannie003@gmail.com"
               className="cursor-mail uppercase a11y-focus group"
-              target="_blank">liannie003@gmail.com<span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
+              target="_blank">liannie003@gmail.com<Arrow/><span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
             </Link>
         </address>
       </div>
