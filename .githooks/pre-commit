@@ -1,0 +1,14 @@
+#!/bin/sh
+root="$(git rev-parse --show-toplevel)"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "sharp pre-commit: node not found, skipping image optimization." >&2
+  exit 0
+fi
+
+if [ ! -d "$root/node_modules/sharp" ]; then
+  echo "sharp pre-commit: sharp not installed, skipping image optimization." >&2
+  exit 0
+fi
+
+node "$root/.githooks/optimize-images.mjs"
