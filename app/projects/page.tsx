@@ -48,7 +48,7 @@ export default function Home() {
               .
             </>
           }
-          imgUrl="/projects/hb.png"
+          imgUrl="/projects/hb.webp"
           iconSrc="/itchio-logo.svg"
           iconAlt="itch.io icon"
           iconUrl="https://draydere.itch.io/heartbreaker"
@@ -58,7 +58,7 @@ export default function Home() {
             'The theme of this game jam was "Nah, I\'d win." But is winning always the solution? Maybe you can find another way...',
             <Image
               key="shot"
-              src="/projects/hb-s.png"
+              src="/projects/hb-s.webp"
               alt="screenshot"
               width={800}
               height={450}
@@ -70,7 +70,7 @@ export default function Home() {
           index={1}
           title="TAMUhack 2026"
           desc="Event website for Texas A&M’s most fruitful hackathon!"
-          imgUrl="/projects/th26.png"
+          imgUrl="/projects/th26.webp"
           iconSrc="/globe-icon.svg"
           iconAlt="website icon"
           iconUrl="https://th26.tamuhack.org"
@@ -81,7 +81,7 @@ export default function Home() {
           index={2}
           title="HowdyHack 2025"
           desc="Event website for Texas A&M’s beginner hackathon with a colorful skater twist!"
-          imgUrl="/projects/hh25.png"
+          imgUrl="/projects/hh25.webp"
           iconSrc="/globe-icon.svg"
           iconAlt="website icon"
           iconUrl="https://hh25.tamuhack.org"
@@ -94,7 +94,7 @@ export default function Home() {
           title="Dream Weaver"
           year="2025"
           desc="2D platformer game where you can grab objects out of your background, made for Chillennium 2025."
-          imgUrl="/projects/dw.png"
+          imgUrl="/projects/dw.webp"
           imgAlt="Dream Weaver"
           iconSrc="/itchio-logo.svg"
           iconAlt="itch.io icon"
@@ -110,7 +110,7 @@ export default function Home() {
           title="Tritone"
           year="2024"
           desc="Live audio locater and transcription IoT system for HoH individuals."
-          imgUrl="/projects/tritone.png"
+          imgUrl="/projects/tritone.webp"
           iconSrc="/github-icon.svg"
           iconAlt="github icon"
           iconUrl="https://github.com/skandrigi/hackutd24"
@@ -122,7 +122,7 @@ export default function Home() {
           title="Merge"
           year="2024"
           desc="Interactive command line interface application designed to simplify and accelerate Git merge conflict resolution."
-          imgUrl="/projects/merge.png"
+          imgUrl="/projects/merge.webp"
           iconSrc="/github-icon.svg"
           iconAlt="github icon"
           iconUrl="https://github.com/skandrigi/MergeCLI"

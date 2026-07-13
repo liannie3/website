@@ -64,7 +64,7 @@ export default function Home() {
           </p>
         </div>
         <Image
-          src="/annie-sticker.png"
+          src="/annie-sticker.webp"
           alt="annie"
           width={200}
           height={1000}
