@@ -25,8 +25,8 @@ export default function Arrow({ className, style }: ArrowProps) {
       className={className}
       style={{ ...baseStyle, ...style }}
     >
-      <path d="M3.5 21.5L20 4" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-      <path d="M10.5 4H20V13.5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      <path d="M3.5 21.5L20 4" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+      <path d="M9.5 4H20V14.5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" vectorEffect="non-scaling-stroke"/>
     </svg>
   );
 }
