@@ -51,6 +51,10 @@ h6 {
   font-weight: 700;
 }
 
+.project-details > * + * {
+  margin-top: 0.75em;
+}
+
 .cursor-mail {
   cursor: url("/custom-mail-icon.svg"), pointer;
 }
@@ -113,18 +117,368 @@ h6 {
   animation: fishWobble 0.45s ease-in-out;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .fish-wobble {
-    animation: none;
-  }
-}
-
 .project-card {
   opacity: 0;
   animation: loadSection 0.6s forwards;
+  z-index: 1;
+
+  --fill-motion: 0.4s ease-in-out;
+
+  transition: z-index 0s linear 0.8s;
+}
+
+.project-card.is-open {
+  z-index: 50;
+  transition: z-index 0s linear 0s;
+
+  cursor: auto;
+}
+
+.project-card.is-open a {
+  cursor: pointer;
+}
+
+.project-card.is-open .project-image button {
+  cursor: pointer;
+}
+
+.project-card.is-hover:not(.is-open) .project-image,
+.project-card.is-hover:not(.is-open) .project-image button {
+  cursor: none;
+}
+
+.fill-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  will-change: transform;
+  mix-blend-mode:multiply;
+}
+
+.fill-cursor-symbol {
+  position: absolute;
+  inset: 3px;
+}
+.fill-cursor-symbol::before,
+.fill-cursor-symbol::after {
+  content: "";
+  position: absolute;
+  background: #111f5b;
+  border-radius: 0;
+}
+.fill-cursor-symbol::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2.25px;
+  margin-left: -1.125px;
+}
+.fill-cursor-symbol::after {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2.25px;
+  margin-top: -1.125px;
+}
+
+.fill-cursor.is-spinning {
+  animation: fillCursorSpinFade 0.2s ease forwards;
+}
+.fill-cursor.is-spinning .fill-cursor-symbol {
+  animation: fillCursorSpinAway 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.fill-cursor.is-spinning-in {
+  animation: fillCursorSpinFadeIn .7s ease-in forwards;
+}
+.fill-cursor.is-spinning-in .fill-cursor-symbol {
+  animation: fillCursorSpinIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fillCursorSpinAway {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-225deg);
+  }
+}
+
+@keyframes fillCursorSpinFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fillCursorSpinIn {
+  from {
+    transform: rotate(-225deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fillCursorSpinFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html.fill-open {
+  overscroll-behavior: none;
+  scrollbar-width: none;
+}
+
+html.fill-open::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.fill-scrollbar {
+  position: fixed;
+  top: 10px;
+  right: 6px;
+  bottom: 10px;
+  z-index: 60;
+  width: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.fill-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  border-radius: 999px;
+
+  background: currentColor;
+  opacity: 0.3;
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+  transition: opacity 0.2s ease;
+  will-change: transform, height;
+}
+
+.fill-scrollbar-thumb:hover {
+  opacity: 0.5;
+}
+
+.fill-scrollbar-thumb:active {
+  cursor: grabbing;
+  opacity: 0.6;
 }
 
 .projects-static .project-card {
   opacity: 1;
   animation: none;
+}
+
+.project-interactive .project-fill {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--accent-color);
+
+  clip-path: inset(
+    var(--fill-top, 50%) var(--fill-right, 50%) var(--fill-bottom, 50%)
+      var(--fill-left, 50%)
+  );
+  transition: clip-path var(--fill-motion);
+  pointer-events: none;
+}
+
+.project-card.is-open .project-fill {
+  clip-path: inset(
+    calc(var(--fill-top, 50%) - var(--fill-dy, 150vmax))
+      calc(var(--fill-right, 50%) - var(--fill-dx, 150vmax))
+      calc(var(--fill-bottom, 50%) - var(--fill-dy, 150vmax))
+      calc(var(--fill-left, 50%) - var(--fill-dx, 150vmax))
+  );
+  pointer-events: auto;
+}
+
+.project-interactive .project-image,
+.project-interactive .project-content {
+  position: relative;
+  z-index: 1;
+}
+
+.project-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  clip-path: inset(
+    var(--details-top, 50%) var(--details-right, 50%)
+      var(--details-bottom, 50%) var(--details-left, 50%)
+  );
+  transition:
+    clip-path var(--fill-motion),
+    visibility 0s linear 0.4s;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.project-card.is-open .project-details {
+  clip-path: inset(
+    calc(var(--details-top, 50%) - var(--fill-dy, 150vmax))
+      calc(var(--details-right, 50%) - var(--fill-dx, 150vmax))
+      calc(var(--details-bottom, 50%) - var(--fill-dy, 150vmax))
+      calc(var(--details-left, 50%) - var(--fill-dx, 150vmax))
+  );
+
+  pointer-events: auto;
+  cursor: auto;
+  visibility: visible;
+  transition:
+    clip-path var(--fill-motion),
+    visibility 0s;
+}
+
+.project-more {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 5px;
+  margin: -3px -5px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  opacity: 0.7;
+  clip-path: inset(var(--more-top, 0px) 0 0 0);
+  transition:
+    opacity 0.2s ease,
+    clip-path var(--fill-motion),
+    visibility 0s;
+}
+
+.project-more:hover,
+.project-more:focus-visible {
+  opacity: 1;
+}
+
+.project-more:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.project-card.is-open .project-more {
+  clip-path: inset(calc(var(--more-top, 0px) + var(--fill-dy, 150vmax)) 0 0 0);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    clip-path var(--fill-motion),
+    visibility 0s linear 0.4s;
+}
+
+.project-close {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0.6em;
+  border-radius: 50%;
+  background-color: transparent;
+  pointer-events: none;
+  cursor: pointer;
+
+  clip-path: inset(
+    var(--close-top, 50%) var(--close-right, 50%) var(--close-bottom, 50%)
+      var(--close-left, 50%)
+  );
+  transition:
+    clip-path var(--fill-motion),
+    background-color 0.15s ease,
+    visibility 0s linear 0.4s;
+  visibility: hidden;
+}
+
+.project-card.is-open .project-close {
+  clip-path: inset(
+    calc(var(--close-top, 50%) - var(--fill-dy, 150vmax))
+      calc(var(--close-right, 50%) - var(--fill-dx, 150vmax))
+      calc(var(--close-bottom, 50%) - var(--fill-dy, 150vmax))
+      calc(var(--close-left, 50%) - var(--fill-dx, 150vmax))
+  );
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    clip-path var(--fill-motion),
+    background-color 0.15s ease,
+    visibility 0s;
+}
+.project-card.is-open .project-image:hover .project-close {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.project-close-symbol {
+  position: absolute;
+  inset: 9px;
+  transform: rotate(225deg);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.project-card.is-open .project-close-symbol {
+  transform: rotate(0deg);
+}
+.project-close-symbol::before,
+.project-close-symbol::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2.25px;
+  margin: -1.125px 0 0 -50%;
+  border-radius: 0;
+  background: currentColor;
+}
+.project-close-symbol::before {
+  transform: rotate(45deg);
+}
+.project-close-symbol::after {
+  transform: rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill-cursor,
+  .fill-scrollbar,
+  .project-interactive .project-fill,
+  .project-card.is-open .project-fill,
+  .project-details,
+  .project-card.is-open .project-details,
+  .project-more,
+  .project-card.is-open .project-more,
+  .project-close,
+  .project-close-symbol {
+    transition: none;
+  }
+  .fish-wobble,
+  .fill-cursor.is-spinning,
+  .fill-cursor.is-spinning .fill-cursor-symbol,
+  .fill-cursor.is-spinning-in,
+  .fill-cursor.is-spinning-in .fill-cursor-symbol {
+    animation: none;
+  }
 }
