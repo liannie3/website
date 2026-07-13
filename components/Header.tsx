@@ -7,32 +7,31 @@ export default function Header() {
   const pathname = usePathname();
   return (
     <header className="w-full">
-      <h3>
-        <div className="flex w-full flex-row justify-between items-start gap-[8px]">
-          <div className="flex items-center">
-            <Link
-              href="/secret"
-              passHref
-              className="a11y-focus group inline-block"
-            >
-              <div className="relative mr-1.5 h-[24px] w-[24px]">
-                <Image
-                  src="/icon-v4.svg"
-                  alt="icon"
-                  fill
-                  className="opacity-100 transition-opacity duration-200 group-hover:opacity-0"
-                  loading="eager"
-                />
-                <Image
-                  src="/icon-v4-dark.svg"
-                  alt="dark icon"
-                  fill
-                  className="opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-                />
-              </div>
-            </Link>
-
-            <Link href="/" passHref aria-label="Annie Li - home" className="a11y-focus inline-block">
+      <div className="flex w-full flex-row justify-between items-start">
+        <div className="flex items-center">
+          <Link
+            href="/secret"
+            passHref
+            className="a11y-focus group "
+          >
+            <div className="relative mr-1.5 h-[24px] w-[24px]">
+              <Image
+                src="/icon-v4.svg"
+                alt="icon"
+                fill
+                className="opacity-100 transition-opacity duration-200 group-hover:opacity-0"
+                loading="eager"
+              />
+              <Image
+                src="/icon-v4-dark.svg"
+                alt="dark icon"
+                fill
+                className="opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+              />
+            </div>
+          </Link>
+          <h1 aria-label="Annie Li - home">
+            <Link href="/" passHref className="a11y-focus">
               <svg
                 viewBox="0 0 52 11"
                 className="block h-[18px] w-[85px]"
@@ -52,35 +51,35 @@ export default function Header() {
                 <circle cx="26.8667" cy="0.866667" r="0.866667" fill="currentColor" />
               </svg>
             </Link>
-          </div>
-          <nav className="flex flex-col items-end sm:flex-row sm:items-center space-x-[8px] md:space-x-[12px]">
-              <Link
-                href="/projects"
-                passHref
-                className={`a11y-focus group ${pathname === "/projects" ? "font-bold" : ""}`}
-              >
-                Projects
-                <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-              <Link
-                href="/visuals"
-                passHref
-                className={`a11y-focus group whitespace-nowrap ${pathname === "/visuals" ? "font-bold" : ""}`}
-              >
-                Visual Arts
-                <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-              <Link
-                href="/about"
-                passHref
-                className={`a11y-focus group ${pathname === "/about" ? "font-bold" : ""}`}
-              >
-                About
-                <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-            </nav>
-          </div>
-      </h3>
+          </h1>
+        </div>
+        <nav className="flex flex-col items-end sm:flex-row sm:items-center sm:gap-[0.7em]">
+            <Link
+              href="/projects"
+              passHref
+              className={`a11y-focus group ${pathname === "/projects" ? "font-bold" : ""}`}
+            >
+              Projects
+              <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </Link>
+            <Link
+              href="/visuals"
+              passHref
+              className={`a11y-focus group whitespace-nowrap ${pathname === "/visuals" ? "font-bold" : ""}`}
+            >
+              Visual Arts
+              <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </Link>
+            <Link
+              href="/about"
+              passHref
+              className={`a11y-focus group ${pathname === "/about" ? "font-bold" : ""}`}
+            >
+              About
+              <span className="block h-[1px] w-0 bg-foreground transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </Link>
+          </nav>
+        </div>
     </header>
   );
 }
