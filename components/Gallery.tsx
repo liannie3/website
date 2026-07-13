@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const images = [
-  "/gallery/mock_trial.gif",
+  "/gallery/mock_trial.mp4",
   "/gallery/latios.png",
   "/gallery/fence1.jpg",
   "/gallery/fence2.png",
@@ -21,11 +21,13 @@ const images = [
   "/gallery/sitting.jpeg",
   "/gallery/revicon.jpeg",
   "/gallery/revlogo.jpeg",
-  "/gallery/revrodeo.gif",
-  "/gallery/tigerrun.GIF",
-  "/gallery/revwalk.GIF",
-  "/gallery/idle.GIF",
+  "/gallery/revrodeo.mp4",
+  "/gallery/tigerrun.mp4",
+  "/gallery/revwalk.mp4",
+  "/gallery/idle.mp4",
 ];
+
+const isVideo = (src: string) => src.endsWith(".mp4");
 
 let introPlayed = false;
 
@@ -52,13 +54,24 @@ export default function Gallery() {
               style={{ animationDelay: `${0.25 + rowIndex * 0.15}s` }}
               onClick={() => setSelectedImage(src)}
             >
-              <Image
-                src={src}
-                alt={`Image ${rowIndex * 2 + colIndex + 1}`}
-                width={300}
-                height={0}
-                className="h-auto w-full object-cover"
-              />
+              {isVideo(src) ? (
+                <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-auto w-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={src}
+                  alt={`Image ${rowIndex * 2 + colIndex + 1}`}
+                  width={300}
+                  height={0}
+                  className="h-auto w-full object-cover"
+                />
+              )}
               <div className="absolute inset-0 overflow-hidden bg-[hsl(0,0%,0.4%,0.15)] opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
             </div>
           ))}
@@ -71,14 +84,25 @@ export default function Gallery() {
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative bg-white p-0">
-            <Image
-              src={selectedImage}
-              alt="Selected"
-              width={1200}
-              height={1200}
-              sizes="95vw"
-              className="h-auto max-h-[95vh] w-auto max-w-[95vw] object-contain"
-            />
+            {isVideo(selectedImage) ? (
+              <video
+                src={selectedImage}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-auto max-h-[95vh] w-auto max-w-[95vw] object-contain"
+              />
+            ) : (
+              <Image
+                src={selectedImage}
+                alt="Selected"
+                width={1200}
+                height={1200}
+                sizes="95vw"
+                className="h-auto max-h-[95vh] w-auto max-w-[95vw] object-contain"
+              />
+            )}
           </div>
         </div>
       )}
