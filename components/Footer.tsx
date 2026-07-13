@@ -10,24 +10,24 @@ export default function Footer() {
             href="https://github.com/liannie3"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-github a11y-focus group">GitHub<Arrow/>,
+            className="cursor-github a11y-focus group">GitHub<Arrow/>,<span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
           </a>
           <a 
             href="https://www.linkedin.com/in/liannie3"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-linkedin group a11y-focus">LinkedIn<Arrow/>, 
+            className="cursor-linkedin group a11y-focus">LinkedIn<Arrow/>,<span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
           </a>
           <Link 
             href="/Annie_Li_Resume.pdf"
             target="_blank"
-            className="cursor-resume a11y-focus group">Resume
+            className="cursor-resume a11y-focus group">Resume<span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
           </Link>
         </div>
         <address className="flex gap-[0.3em] whitespace-nowrap text-[16px] not-italic">Say hi!<Link 
               href="mailto:liannie003@gmail.com"
-              className="cursor-mail uppercase a11y-focus"
-              target="_blank">liannie003@gmail.com
+              className="cursor-mail uppercase a11y-focus group"
+              target="_blank">liannie003@gmail.com<span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
             </Link>
         </address>
       </div>
