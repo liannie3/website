@@ -2,17 +2,14 @@
 
 import Image from "next/image";
 import Arrow from "@/components/Arrow";
-import Link from "next/link"
-import { usePathname } from "next/navigation";
 
 export default function Home() {
-  const pathname = usePathname();
   return (
     <main className="flex w-full flex-grow flex-col justify-center gap-2">
       <section className="flex flex-col items-center gap-8 sm:flex-row sm:gap-12">
         <div className="flex w-auto flex-col gap-4">
           <p className="">
-            Howdy! I’m Annie and I study electrical engineering
+            Howdy! I'm Annie and I study electrical engineering
             at Texas A&M University. I'm primarily interested in CPU architecture 
             and embedded systems.  </p><p>
             I currently work on validating SOCs at <span className="hover-bg">
