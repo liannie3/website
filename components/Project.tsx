@@ -461,7 +461,7 @@ function Project({
       alt={imgAlt || title}
       width={800}
       height={450}
-      className="mb-1 h-auto w-full object-cover"
+      className="block h-auto w-full object-cover"
     />
   );
 
@@ -515,7 +515,7 @@ function Project({
 
       <div
         ref={imageRef}
-        className="project-image"
+        className="project-image mb-1"
         onPointerEnter={() => {
           if (canInteract) setHovering(true);
         }}
