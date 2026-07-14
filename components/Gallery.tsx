@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import images from "./gallery.json";
 
 const isVideo = (src: string) => src.endsWith(".mp4");
@@ -9,6 +9,44 @@ const isVideo = (src: string) => src.endsWith(".mp4");
 const GALLERY_SIZES = "(max-width: 768px) 45vw, 360px";
 
 let introPlayed = false;
+
+function GalleryVideo({
+  src,
+  w,
+  h,
+}: {
+  src: string;
+  w: number;
+  h: number;
+}) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { rootMargin: "100px" },
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <video
+      ref={ref}
+      src={src}
+      width={w}
+      height={h}
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      className="h-auto w-full object-cover"
+    />
+  );
+}
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -34,16 +72,7 @@ export default function Gallery() {
               onClick={() => setSelectedImage(item.src)}
             >
               {isVideo(item.src) ? (
-                <video
-                  src={item.src}
-                  width={item.w}
-                  height={item.h}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="h-auto w-full object-cover"
-                />
+                <GalleryVideo src={item.src} w={item.w} h={item.h} />
               ) : (
                 <Image
                   src={item.src}
