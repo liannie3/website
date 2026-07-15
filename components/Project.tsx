@@ -256,6 +256,20 @@ function Project({
   }, [open, closeOverview]);
 
   useEffect(() => {
+    if (!open) return;
+    const card = cardRef.current;
+    const hidden: HTMLElement[] = [];
+    document
+      .querySelectorAll<HTMLElement>("header, footer, .project-card")
+      .forEach((el) => {
+        if (el !== card) hidden.push(el);
+      });
+    hidden.forEach((el) => (el.inert = true));
+    closeRef.current?.focus({ preventScroll: true });
+    return () => hidden.forEach((el) => (el.inert = false));
+  }, [open]);
+
+  useEffect(() => {
     if (!spinning) return;
     const t = setTimeout(() => setSpinning(false), 420);
     return () => clearTimeout(t);
