@@ -14,7 +14,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        solanel: ['Solanel', 'sans-serif'],
+        onest: ['var(--font-onest)', 'sans-serif'],
       }
     },
   },

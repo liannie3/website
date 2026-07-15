@@ -11,7 +11,7 @@
 :root {
   --background: #f7f4ee;
   --foreground: #111f5b;
-  --font-default: var(--font-solanel), Arial, Helvetica, sans-serif;
+  --font-default: var(--font-onest), Arial, Helvetica, sans-serif;
 }
 
 .dark {

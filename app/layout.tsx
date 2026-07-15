@@ -6,18 +6,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 
-const solanel = localFont({
-  src: [
-    { path: '../public/fonts/SolanelRegular.woff', weight: '500', style: 'normal' },
-    { path: '../public/fonts/SolanelRegular.woff2', weight: '500', style: 'normal' },
-    { path: '../public/fonts/SolanelLight.woff', weight: '300', style: 'normal' },
-    { path: '../public/fonts/SolanelLight.woff2', weight: '300', style: 'normal' },
-    { path: '../public/fonts/SolanelMedium.woff', weight: '600', style: 'normal' },
-    { path: '../public/fonts/SolanelMedium.woff2', weight: '600', style: 'normal' },
-    { path: '../public/fonts/SolanelBold.woff', weight: '700', style: 'normal' },
-    { path: '../public/fonts/SolanelBold.woff2', weight: '700', style: 'normal' },
-  ],
-  variable: "--font-solanel"
+const onest = localFont({
+  src: '../public/fonts/Onest.woff2',
+  variable: "--font-onest",
+  display: 'swap'
 })
 
 export const metadata: Metadata = {
@@ -36,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${solanel.variable} antialiased`}
+        className={`${onest.variable} antialiased`}
       >
         <div className="w-full bg-background text-foreground">
-          <div className="mx-auto flex min-h-dvh w-full max-w-[770px] flex-col items-center gap-8 p-4 font-solanel">
+          <div className="mx-auto flex min-h-dvh w-full max-w-[770px] flex-col items-center gap-8 p-4 font-onest">
             <Header />
             {children}
             <Footer />
