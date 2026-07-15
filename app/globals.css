@@ -22,18 +22,19 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 450;
+  font-size: 17px;
+  letter-spacing: 0.01em;
   text-wrap: balance;
 }
 
 h1 { /*page titles*/
-  font-weight: 500;
   letter-spacing: -0.05em;
 }
 
 h2 { /*project titles*/
   font-size: 22px;
+  letter-spacing: 0.01em;
 }
 
 h3 {
@@ -43,12 +44,6 @@ h3 {
 nav { /*header footer links*/
   font-size: 16px;
   text-transform: uppercase;
-}
-
-h4,
-h5,
-h6 {
-  font-weight: 700;
 }
 
 .project-details > * + * {
