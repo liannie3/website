@@ -86,6 +86,7 @@ function Project({
   const closeRef = useRef<HTMLButtonElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const moreRef = useRef<HTMLButtonElement>(null);
+  const openingRef = useRef(false);
   const detailsId = useId();
 
   useEffect(() => {
@@ -154,6 +155,7 @@ function Project({
     }
     void fill.offsetWidth;
     animated.forEach((el) => (el.style.transition = ""));
+    return { centerX, centerY, dx, dy };
   }, []);
 
   const closeOverview = useCallback(() => {
@@ -185,26 +187,60 @@ function Project({
     const maxScroll =
       document.documentElement.scrollHeight - window.innerHeight;
     const targetY = Math.min(Math.max(window.scrollY + raw, 0), maxScroll);
-    const delta = targetY - window.scrollY;
+    const from = window.scrollY;
+    const delta = targetY - from;
     const reduce = prefersReducedMotion();
     if (Math.abs(delta) < 2 || reduce) {
       if (Math.abs(delta) >= 2) window.scrollTo({ top: targetY });
       start();
       return;
     }
-    const from = window.scrollY;
-    const duration = 100;
-    const ease = (t: number) => 1 - Math.pow(1 - t, 3);
+    const geo = positionOrigin();
+    const fill = fillRef.current;
+    setOpen(true);
+    if (lastPointer.seen && hovering && !reduce) {
+      setSpinning(true);
+    }
+    if (!geo || !fill) {
+      window.scrollTo({ top: targetY });
+      return;
+    }
+    openingRef.current = true;
+    const { centerX, centerY, dx, dy } = geo;
+    fill.style.transition = "none";
+    const applyFill = (p: number) => {
+      const cy = centerY - delta * p;
+      const top = cy - dy * p;
+      const bottom = window.innerHeight - cy - dy * p;
+      const left = centerX - dx * p;
+      const right = window.innerWidth - centerX - dx * p;
+      fill.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px)`;
+    };
+    applyFill(0);
+    const duration = 400;
+    const ease = (t: number) =>
+      t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
     let startTime: number | null = null;
     const step = (now: number) => {
+      if (!cardIsOpen) {
+        fill.style.clipPath = "";
+        fill.style.transition = "";
+        openingRef.current = false;
+        return;
+      }
       if (startTime === null) startTime = now;
       const t = Math.min((now - startTime) / duration, 1);
-      window.scrollTo(0, from + delta * ease(t));
-      if (t < 1 && ease(t) < 0.98) {
+      const p = ease(t);
+      window.scrollTo(0, from + delta * p);
+      applyFill(p);
+      if (t < 1) {
         requestAnimationFrame(step);
       } else {
         window.scrollTo(0, targetY);
-        start();
+        openingRef.current = false;
+        fill.style.clipPath = "";
+        void fill.offsetWidth;
+        fill.style.transition = "";
       }
     };
     requestAnimationFrame(step);
@@ -303,6 +339,7 @@ function Project({
     };
 
     const clamp = () => {
+      if (openingRef.current) return;
       if (window.scrollY < bounds.min) window.scrollTo(0, bounds.min);
       else if (window.scrollY > bounds.max) window.scrollTo(0, bounds.max);
     };
