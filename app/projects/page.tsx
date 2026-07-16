@@ -40,7 +40,6 @@ export default function Home() {
                   href="https://chillennium.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontWeight: 500 }}
                 >
                   <>Chillennium 2026<Arrow /></>
                 </a>

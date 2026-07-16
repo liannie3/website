@@ -15,7 +15,6 @@ export default function Home() {
                 href="https://apple.com"
                 target="_blank"
                 className="whitespace-nowrap"
-                style={{ fontWeight: 500 }}
               >
                 <>Apple<Arrow /></>
               </a>
@@ -26,7 +25,6 @@ export default function Home() {
                 href="https://tamuhack.org"
                 target="_blank"
                 className="whitespace-nowrap"
-                style={{ fontWeight: 500 }}
               >
                 <>TAMUhack<Arrow /></>
               </a>
@@ -38,7 +36,6 @@ export default function Home() {
                 href="https://hpe.com/"
                 target="_blank"
                 className="whitespace-nowrap"
-                style={{ fontWeight: 500 }}
               >
                 <>HPE<Arrow /></>
               </a>
@@ -49,7 +46,6 @@ export default function Home() {
                 href="https://seth.engr.tamu.edu/"
                 target="_blank"
                 className="whitespace-nowrap"
-                style={{ fontWeight: 500 }}
               >
                 <>SETH Lab<Arrow /></>
               </a>
