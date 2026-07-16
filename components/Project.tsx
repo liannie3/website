@@ -566,7 +566,7 @@ function Project({
 
       <div
         ref={imageRef}
-        className="project-image mb-1"
+        className="project-image"
         onPointerEnter={() => {
           if (canInteract) setHovering(true);
         }}
