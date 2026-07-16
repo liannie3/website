@@ -602,28 +602,27 @@ function Project({
         )}
       </div>
 
-      <div className="project-content relative flex w-full flex-col">
-        <div className="flex flex-wrap w-full ">
+      <div className="project-content relative flex w-full flex-col gap-0.5">
+        <div className="flex flex-wrap w-full">
           <h2 className="flex flex-1 items-center gap-[0.3em] whitespace-nowrap">
             <div className="inline uppercase">{title}</div>
             {year && <span> / {year}</span>}
           </h2>
 
           {iconUrl && iconSrc && (
-            <Link href={iconUrl} target="_blank" rel="noopener noreferrer">
+            <Link href={iconUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Image
                 src={iconSrc}
                 alt={iconAlt || "Project icon"}
-                width={26}
-                height={26}
-                className="mt-1"
+                width={30}
+                height={30}
               />
             </Link>
           )}
         </div>
         <p>{desc}</p>
         {hasDetails && (
-          <div className="relative mt-[0.2em]">
+          <div className="relative mt-[0.3em]">
             {canInteract && (
               <button
                 type="button"

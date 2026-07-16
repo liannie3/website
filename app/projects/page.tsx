@@ -23,7 +23,7 @@ export default function Home() {
           </p>
         </div>
       <section
-        className={`flex max-w-[450px] flex-col items-start gap-8${
+        className={`flex max-w-[450px] flex-col items-start gap-8 ${
           skipIntro ? " projects-static" : ""
         }`}
       >
