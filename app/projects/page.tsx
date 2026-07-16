@@ -92,7 +92,21 @@ export default function Home() {
           index={3}
           title="Dream Weaver"
           year="2025"
-          desc="2D platformer game where you can grab objects out of your background, made for Chillennium 2025."
+          desc={
+            <>
+              2D platformer game where you can grab objects out of your background, made for{" "}
+              <span className="hover-bg">
+                <a
+                  href="https://chillennium.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <>Chillennium 2025<Arrow /></>
+                </a>
+              </span>
+              .
+            </>
+          }
           imgUrl="/projects/dw.webp"
           imgAlt="Dream Weaver"
           iconSrc="/itchio-logo.svg"
