@@ -284,7 +284,10 @@ function Project({
   useEffect(() => {
     if (!canInteract || open) return;
     let raf = 0;
+    let lastWidth = window.innerWidth;
     const onResize = () => {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
       if (raf) return;
       raf = requestAnimationFrame(() => {
         raf = 0;
@@ -388,11 +391,19 @@ function Project({
       clamp();
       updateThumb();
     };
+    let lastWidth = window.innerWidth;
+    let resizeRaf = 0;
     const onResize = () => {
-      positionOrigin();
-      bounds = computeBounds();
-      clamp();
-      updateThumb();
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+      if (resizeRaf) return;
+      resizeRaf = requestAnimationFrame(() => {
+        resizeRaf = 0;
+        positionOrigin();
+        bounds = computeBounds();
+        clamp();
+        updateThumb();
+      });
     };
 
     const thumb = scrollThumbRef.current;
@@ -442,6 +453,11 @@ function Project({
       cardIsOpen = false;
       doc.classList.remove("fill-open");
       body.style.paddingBottom = prevPad;
+      const maxScroll = doc.scrollHeight - window.innerHeight;
+      if (window.scrollY > maxScroll) {
+        window.scrollTo(0, Math.max(maxScroll, 0));
+      }
+      if (resizeRaf) cancelAnimationFrame(resizeRaf);
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchmove", onTouchMove);
