@@ -3,7 +3,7 @@ import Gallery from "@/components/Gallery";
 
 export default function Home() {
   return (
-    <main className="flex w-full flex-grow flex-col items-start gap-2">
+    <main className="flex w-full grow flex-col items-start gap-2">
       <section className="flex justify-start">
         <h1 className="text-6xl sm:text-7xl">Illustration</h1>
         <Image

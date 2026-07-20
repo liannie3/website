@@ -518,7 +518,7 @@ function Project({
       cancelAnimationFrame(raf);
       window.removeEventListener("pointermove", onMove);
       document.documentElement.removeEventListener("mouseleave", hide);
-      window.removeEventListener("blur", hide);
+      window.removeEventListener("blur-sm", hide);
     };
   }, [hovering, open]);
 

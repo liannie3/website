@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-2 flex-grow items-center justify-center sm:items-start">
+    <main className="flex flex-col gap-2 grow items-center justify-center sm:items-start">
       <section className="flex flex-col">
         <div className="">
           <Image

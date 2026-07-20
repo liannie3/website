@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex w-full flex-grow flex-col justify-center gap-2">
+    <main className="flex w-full grow flex-col justify-center gap-2">
       <section className="flex flex-col items-center gap-8 sm:flex-row sm:gap-12">
         <div className="flex w-auto flex-col gap-4">
           <p className="">

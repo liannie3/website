@@ -2,7 +2,7 @@ import Task from "@/components/Task";
 
 export default function Home() {
   return (
-    <main className="flex flex-col flex-grow gap-2 justify-center items-start w-full">
+    <main className="flex flex-col grow gap-2 justify-center items-start w-full">
       <section className="justify-start">
         <h1 className="text-8xl">To-Do</h1>
       </section>

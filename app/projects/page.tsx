@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex w-full flex-grow flex-col items-start gap-2">
+    <main className="flex w-full grow flex-col items-start gap-2">
       <section className="justify-start">
         <h1 className="text-7xl">Projects</h1>
       </section>

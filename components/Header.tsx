@@ -58,7 +58,7 @@ export default function Header() {
               className={`a11y-focus group ${pathname === "/projects" ? "font-bold" : ""}`}
             >
               Projects
-              <span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
+              <span className="block h-px w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
             </Link>
             <Link
               href="/visuals"
@@ -66,7 +66,7 @@ export default function Header() {
               className={`a11y-focus group whitespace-nowrap ${pathname === "/visuals" ? "font-bold" : ""}`}
             >
               Visual Arts
-              <span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
+              <span className="block h-px w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
             </Link>
             <Link
               href="/about"
@@ -74,7 +74,7 @@ export default function Header() {
               className={`a11y-focus group ${pathname === "/about" ? "font-bold" : ""}`}
             >
               About
-              <span className="block h-[1px] w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
+              <span className="block h-px w-0 bg-foreground transition-all duration-500 ease-in-out group-hover:w-full"></span>
             </Link>
           </nav>
         </div>
