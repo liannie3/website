@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Arrow from "@/components/Arrow";
+
 
 export default function Home() {
   return (
@@ -16,41 +16,42 @@ export default function Home() {
                 target="_blank"
                 className="whitespace-nowrap"
               >
-                <>Apple<Arrow /></>
+                <>Apple</>
               </a>
             </span>
             {" "}and design for hackathons at{" "}
-            <span className="hover-bg">
-              <a
-                href="https://tamuhack.org"
-                target="_blank"
-                className="whitespace-nowrap"
-              >
-                <>TAMUhack<Arrow /></>
-              </a>
-            </span>
-            
-            . Previously I did hardware bringup at{" "}
+              <span className="hover-bg">
+                <a
+                  href="https://tamuhack.org"
+                  target="_blank"
+                  className="whitespace-nowrap"
+                >
+                  <>TAMUhack</>
+                </a>
+              </span>
+              .
+            {" "}
+            Previously I did hardware bringup at{" "}
             <span className="hover-bg">
               <a
                 href="https://hpe.com/"
                 target="_blank"
                 className="whitespace-nowrap"
               >
-                <>HPE<Arrow /></>
+                <>HPE</>
               </a>
             </span>
              {" "} and researched vulnerabilities on processor designs at the{" "}
-            <span className="hover-bg">
-              <a
-                href="https://seth.engr.tamu.edu/"
-                target="_blank"
-                className="whitespace-nowrap"
-              >
-                <>SETH Lab<Arrow /></>
-              </a>
-            </span>
-            .
+              <span className="hover-bg">
+                <a
+                  href="https://seth.engr.tamu.edu/"
+                  target="_blank"
+                  className="whitespace-nowrap"
+                >
+                  <>SETH Lab</>
+                </a>
+              </span>
+              .
           </p>
           <p>
             Outside of this I love drawing, single-player games, playing the piano/guitar

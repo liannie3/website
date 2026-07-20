@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Project from "@/components/Project";
-import Arrow from "@/components/Arrow";
 
 let introPlayed = false;
 
@@ -41,7 +40,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <>Chillennium 2026<Arrow /></>
+                  <>Chillennium 2026</>
                 </a>
               </span>
               .
@@ -94,14 +93,14 @@ export default function Home() {
           year="2025"
           desc={
             <>
-              2D platformer game where you can grab objects out of your background, made for{" "}
+            2D platformer game where you can grab objects out of your background, made for{" "}
               <span className="hover-bg">
                 <a
                   href="https://chillennium.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <>Chillennium 2025<Arrow /></>
+                  <>Chillennium 2025</>
                 </a>
               </span>
               .
