@@ -11,18 +11,20 @@ function Task({status, task}: TaskProps) {
     const [wobble, setWobble] = useState(false);
 
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex gap-2">
             <Image
                 src={status == "notdone" ? "/fish.svg" : "/fishingpole.svg"}
-                alt="fish icon"
+                alt=""
                 width={22}
                 height={22}
                 onClick={() => setWobble(true)}
                 onAnimationEnd={() => setWobble(false)}
                 aria-hidden="true"
-                className={`w-[1.2em] h-[1.2em] ${wobble ? " fish-wobble" : ""}`}
+                className={`w-[1.2em] h-[1.2em] mt-0.75 ${wobble ? " fish-wobble" : ""}`}
             />
+            <div>
             {status == "notdone" ? task : <s>{task}</s>}
+            </div>
             <br></br>
         </div>
     )
