@@ -14,26 +14,26 @@ export default function Header() {
             passHref
             className="a11y-focus group "
           >
-            <div className="relative mr-1.5 h-[24px] w-[24px]">
+            <div className="relative mr-1.5 h-[1.5rem] w-[1.5rem]">
               <Image
                 src="/icon-v4.svg"
                 alt="icon"
                 fill
-                className="opacity-100 transition-opacity duration-200 group-hover:opacity-0"
+                className="h-[1.5rem] w-[1.5rem] opacity-100 transition-opacity duration-200 group-hover:opacity-0"
                 loading="eager"
               />
               <Image
                 src="/icon-v4-dark.svg"
                 alt="dark icon"
                 fill
-                className="opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                className="h-[1.5rem] w-[1.5rem] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
               />
             </div>
           </Link>
             <Link href="/" passHref aria-label="Annie Li - home" className="a11y-focus">
               <svg
                 viewBox="0 0 52 11"
-                className="block h-[18px] w-[85px]"
+                className="block h-[1.125rem] w-[5.3125rem]"
                 fill="none"
                 aria-hidden="true"
               >

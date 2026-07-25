@@ -46,7 +46,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-weight: 450;
-  font-size: 16px;
+  font-size: var(--text-base);
   letter-spacing: 0.01em;
   text-wrap: balance;
 }
@@ -56,16 +56,16 @@ h1 { /*page titles*/
 }
 
 h2 { /*project titles*/
-  font-size: 20px;
+  font-size: 1.4rem;
   letter-spacing: 0.01em;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: var(--text-base);
 }
 
 nav { /*header footer links*/
-  font-size: 16px;
+  font-size: var(--text-base);
   text-transform: uppercase;
 }
 

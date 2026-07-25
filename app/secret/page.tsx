@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex flex-col grow gap-2 justify-center items-start w-full">
       <section className="justify-start">
-        <h1 className="text-8xl">To-Do</h1>
+        <h1 className="text-7xl">To-Do</h1>
       </section>
       <section className="flex flex-col max-w-full gap-8 sm:gap-12 items-center">
         <div className="flex flex-col gap-4 items-center">

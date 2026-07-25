@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${onest.variable} antialiased`}
       >
         <div className="w-full bg-background text-foreground">
-          <div className="mx-auto flex min-h-dvh w-full max-w-[770px] flex-col items-center gap-8 p-4 font-onest">
+          <div className="mx-auto flex min-h-dvh w-full max-w-[48.125rem] flex-col items-center gap-8 p-4 font-onest">
             <Header />
             {children}
             <Footer />
