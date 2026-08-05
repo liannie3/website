@@ -91,7 +91,7 @@ export default function Gallery() {
 
       {selectedImage && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75"
+          className="fixed inset-0 flex items-center justify-center bg-black/80"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative bg-white p-0">
