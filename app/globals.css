@@ -265,6 +265,12 @@ html.fill-open::-webkit-scrollbar {
   height: 0;
 }
 
+.fill-scroll-pad {
+  height: 0;
+  flex: none;
+  pointer-events: none;
+}
+
 .fill-scrollbar {
   position: fixed;
   top: 10px;
@@ -338,12 +344,20 @@ html.fill-open::-webkit-scrollbar {
   z-index: 1;
 }
 
-.project-details {
+.project-details-clip {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  height: 0;
+  overflow: clip;
+}
 
+.project-card.is-revealed .project-details-clip {
+  height: auto;
+}
+
+.project-details {
   clip-path: inset(
     var(--details-top, 50%) var(--details-right, 50%)
       var(--details-bottom, 50%) var(--details-left, 50%)

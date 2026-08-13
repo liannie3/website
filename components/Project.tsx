@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { createPortal } from "react-dom";
 import {
   CSSProperties,
   Fragment,
@@ -76,6 +77,7 @@ function Project({
   const [hovering, setHovering] = useState(false);
   const [spinning, setSpinning] = useState(false);
   const [spinningIn, setSpinningIn] = useState(false);
+  const [revealed, setRevealed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const fillRef = useRef<HTMLDivElement>(null);
@@ -86,6 +88,7 @@ function Project({
   const closeRef = useRef<HTMLButtonElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const moreRef = useRef<HTMLButtonElement>(null);
+  const scrollPadRef = useRef<HTMLDivElement>(null);
   const openingRef = useRef(false);
   const detailsId = useId();
 
@@ -270,6 +273,15 @@ function Project({
   }, [open]);
 
   useEffect(() => {
+    if (open) {
+      setRevealed(true);
+      return;
+    }
+    const t = setTimeout(() => setRevealed(false), 450);
+    return () => clearTimeout(t);
+  }, [open]);
+
+  useEffect(() => {
     if (!spinning) return;
     const t = setTimeout(() => setSpinning(false), 420);
     return () => clearTimeout(t);
@@ -304,12 +316,11 @@ function Project({
   useEffect(() => {
     if (!open) return;
     const doc = document.documentElement;
-    const body = document.body;
-    const prevPad = body.style.paddingBottom;
     const computeBounds = () => {
       const card = cardRef.current;
       if (!card) return { min: window.scrollY, max: window.scrollY };
-      body.style.paddingBottom = prevPad;
+      const pad = scrollPadRef.current;
+      if (pad) pad.style.height = "0px";
       const cardRect = card.getBoundingClientRect();
       const min = Math.max(
         window.scrollY + cardRect.top - topHeadroom(),
@@ -328,7 +339,7 @@ function Project({
         0,
         desiredMax - (doc.scrollHeight - window.innerHeight),
       );
-      if (extra > 0) body.style.paddingBottom = `${extra}px`;
+      if (pad && extra > 0) pad.style.height = `${extra}px`;
       const docMax = doc.scrollHeight - window.innerHeight;
       return { min: Math.min(min, docMax), max: Math.min(desiredMax, docMax) };
     };
@@ -452,7 +463,6 @@ function Project({
     return () => {
       cardIsOpen = false;
       doc.classList.remove("fill-open");
-      body.style.paddingBottom = prevPad;
       const maxScroll = doc.scrollHeight - window.innerHeight;
       if (window.scrollY > maxScroll) {
         window.scrollTo(0, Math.max(maxScroll, 0));
@@ -537,7 +547,9 @@ function Project({
       ref={cardRef}
       className={`project-card relative flex flex-col justify-start${
         canInteract ? " project-interactive" : ""
-      }${open ? " is-open" : ""}${hovering ? " is-hover" : ""}`}
+      }${open ? " is-open" : ""}${revealed ? " is-revealed" : ""}${
+        hovering ? " is-hover" : ""
+      }`}
       style={
         {
           "--accent-color": accentColor,
@@ -545,6 +557,12 @@ function Project({
         } as CSSProperties
       }
     >
+      {open &&
+        createPortal(
+          <div ref={scrollPadRef} className="fill-scroll-pad" aria-hidden="true" />,
+          document.body,
+        )}
+
       {canInteract && (
         <div
           ref={fillRef}
@@ -620,10 +638,10 @@ function Project({
 
       <div className="project-content relative flex w-full flex-col gap-0.5">
         <div className="flex flex-wrap w-full">
-          <h2 className="flex flex-1 items-center gap-[0.3em] whitespace-nowrap">
-            <div className="inline uppercase">{title}</div>
-            {year && <span> / {year}</span>}
-          </h2>
+          <div className="flex flex-1 items-center gap-[0.3em] whitespace-nowrap">
+            <h2 className="inline uppercase">{title}
+            {year && <span>, {year}</span>}</h2>
+          </div>
 
           {iconUrl && iconSrc && (
             <Link href={iconUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
@@ -651,15 +669,19 @@ function Project({
                 Read more +
               </button>
             )}
-            <div ref={detailsRef} id={detailsId} className="project-details">
-              {Array.isArray(details)
-                ? details.map((item, i) => (
-                    <Fragment key={i}>
-                      {typeof item === "string" ? <p>{item}</p> : item}
-                    </Fragment>
-                  ))
-                : details}
+            <div className="project-details-clip">
+              <div ref={detailsRef} id={detailsId} className="project-details">
+                {Array.isArray(details)
+                  ? details.map((item, i) => (
+                      <Fragment key={i}>
+                        {typeof item === "string" ? <p>{item}</p> : item}
+                      </Fragment>
+                    ))
+                  : details}
+                  
+              </div>
             </div>
+            
           </div>
         )}
       </div>
