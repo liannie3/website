@@ -48,7 +48,7 @@ body {
   font-weight: 450;
   font-size: 1.0625rem;
   letter-spacing: 0.01em;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 h1 { /*page titles*/
