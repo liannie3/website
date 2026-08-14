@@ -393,8 +393,10 @@ function Project({
     const FLING_MAX_VELOCITY = 8;
     const VELOCITY_WINDOW_MS = 100;
     const STALE_LIFT_MS = 150;
+    const CARRY_RETAIN = 0.8;
     let touchY = 0;
     let velocity = 0;
+    let carryVelocity = 0;
     let onThumb = false;
     let flingRaf = 0;
     let touchTarget = 0;
@@ -408,10 +410,12 @@ function Project({
       flingRaf = 0;
     };
     const onTouchStart = (e: TouchEvent) => {
+      const interruptedFling = flingRaf !== 0;
       stopFling();
+      carryVelocity = interruptedFling ? velocity : 0;
       onThumb = !!(e.target as HTMLElement).closest?.(".fill-scrollbar");
       touchY = e.touches[0].clientY;
-      touchTarget = window.scrollY;
+      if (!interruptedFling) touchTarget = window.scrollY;
       velocity = 0;
       samples = [{ t: performance.now(), y: touchY }];
     };
@@ -428,15 +432,20 @@ function Project({
       }
     };
     const onTouchEnd = (e: TouchEvent) => {
-      if (onThumb || e.touches.length > 0 || samples.length < 2) return;
+      if (onThumb || e.touches.length > 0) return;
+      const carried = carryVelocity;
+      carryVelocity = 0;
+      if (samples.length < 2) return;
       const newest = samples[samples.length - 1];
       const oldest = samples[0];
       const span = newest.t - oldest.t;
       const liftDelay = performance.now() - newest.t;
       if (span <= 0 || liftDelay > STALE_LIFT_MS) return;
       const raw = ((oldest.y - newest.y) / span) * FLING_GAIN;
+      const sameDirection = raw * carried > 0;
+      const combined = sameDirection ? raw + carried * CARRY_RETAIN : raw;
       velocity = Math.max(
-        Math.min(raw, FLING_MAX_VELOCITY),
+        Math.min(combined, FLING_MAX_VELOCITY),
         -FLING_MAX_VELOCITY,
       );
       if (Math.abs(velocity) < FLING_MIN_VELOCITY) return;
