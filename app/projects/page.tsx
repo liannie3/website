@@ -2,6 +2,10 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Project from "@/components/Project";
+import hbShot from "@/public/projects/hb-s.webp";
+import hbBlooberFamily from "@/public/projects/hb-bloober-family.png";
+import hbEmotions from "@/public/projects/hb-emotions.png";
+import hbFountain from "@/public/projects/hb-fountain.png";
 
 let introPlayed = false;
 
@@ -22,7 +26,7 @@ export default function Home() {
           </p>
         </div>
       <section
-        className={`flex max-w-[28rem] flex-col items-start gap-8 ${
+        className={`flex max-w-[32rem] flex-col items-start gap-8 ${
           skipIntro ? " projects-static" : ""
         }`}
       >
@@ -52,16 +56,50 @@ export default function Home() {
           iconUrl="https://draydere.itch.io/heartbreaker"
           accentColor="#A0AED9"
           details={[
-            "A 2-player game where you race to gossip with the local aliens about your ex! Town is small, so word gets around fast.",
-            'The theme of this game jam was "Nah, I\'d win." But is winning always the solution? Maybe you can find another way...',
+            'Heartbreaker is a 2-player game where the other player is your vengeful alien ex.',
+            
+            'Your divorce case is coming up soon and you\'ve had the wonderful idea of writing a hit piece on your ex to swing public opinion in your favor. Unfortunately for you, they\'re trying to do the same. ',
             <Image
               key="shot"
-              src="/projects/hb-s.webp"
-              alt="screenshot"
-              width={800}
-              height={450}
+              src={hbShot}
+              alt="Game screenshot"
               className="h-auto w-full"
             />,
+            'To write this hit piece, you\'ll need to collect some dirt on them from the local aliens. Town is small, so word gets around fast—talk to people as quickly as you can.',
+
+            'Heartbreaker was made in 48 hours by 2 developers, 1 writer, and 1 illustrator (me!). Making a cast of quirky aliens to populate town was super fun, but my favorites ended up being the players\' family, shown below.',
+
+            <Image
+              key="shot"
+              src={hbBlooberFamily}
+              alt="Bloober family art"
+              className="h-auto w-full"
+            />,
+            'Meet the dysfunctional Bloober family! Left to right: Zill, Zerica, Zlessing, Zustin.',
+            
+            'My team couldn\'t come up with a game idea we liked until the jam was more than halfway over. Somehow this happens every time. Our first concept was a series of minigames that you play against your partner. Then we remembered our last game jam where we completely overscoped and weren\'t even able to complete a level, and scaled it down a bit.',
+            'We settled on just having you walk around and talk to people to collect evidence.',
+            'That was pretty boring on its own, so we added a player feedback mechanism: emotions.',
+            
+            <Image
+              key="shot"
+              src={hbEmotions}
+              alt="Emotion icons for both players"
+              className="h-auto w-full"
+            />,
+            'These icons were churned out on my friend\'s couch about 2 hours before the deadline 🙂',
+            
+            'Emotions affect your evidence-gathering ability, and different people will give you different emotions. Talking to your friend makes you feel better than talking to, say, your ex\'s coworker.',
+            
+            'Our goal was to make the player actually pay attention to who they choose to talk to.',
+
+            <Image
+              key="shot"
+              src={hbFountain}
+              alt="Fountain and alien art"
+              className="h-auto w-full"
+            />,
+            'The theme of this game jam was "Nah, I\'d win," so yes, you can win this game. But is winning really the best resolution here? Play to the end and find out!',
           ]}
         />
         <Project
