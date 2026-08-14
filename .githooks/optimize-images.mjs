@@ -67,6 +67,7 @@ for (const rel of images) {
   const oldUrl = "/" + rel.replace(/^public\//, "");
   const newUrl = "/" + webpRel.replace(/^public\//, "");
   rewriteRefs(oldUrl, newUrl);
+  rewriteRefs("@/" + rel, "@/" + webpRel);
 
   execSync(`git rm -f -q ${q(rel)}`, { cwd: root });
   execSync(`git add ${q(webpRel)}`, { cwd: root });

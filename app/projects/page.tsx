@@ -3,9 +3,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Project from "@/components/Project";
 import hbShot from "@/public/projects/hb-s.webp";
-import hbBlooberFamily from "@/public/projects/hb-bloober-family.png";
-import hbEmotions from "@/public/projects/hb-emotions.png";
-import hbFountain from "@/public/projects/hb-fountain.png";
+import hbBlooberFamily from "@/public/projects/hb-bloober-family.webp";
+import hbEmotions from "@/public/projects/hb-emotions.webp";
+import hbFountain from "@/public/projects/hb-fountain.webp";
 
 let introPlayed = false;
 
