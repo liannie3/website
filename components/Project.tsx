@@ -366,16 +366,15 @@ function Project({
       thumb.style.transform = `translateY(${progress * (trackH - thumbH)}px)`;
     };
 
+    const clampTo = (y: number) =>
+      Math.min(Math.max(y, bounds.min), bounds.max);
     const clamp = () => {
       if (openingRef.current) return;
       if (window.scrollY < bounds.min) window.scrollTo(0, bounds.min);
       else if (window.scrollY > bounds.max) window.scrollTo(0, bounds.max);
     };
     const scrollBy = (dy: number) => {
-      window.scrollTo(
-        0,
-        Math.min(Math.max(window.scrollY + dy, bounds.min), bounds.max),
-      );
+      window.scrollTo(0, clampTo(window.scrollY + dy));
     };
     const onWheel = (e: WheelEvent) => {
       if (e.ctrlKey) return;
@@ -391,12 +390,18 @@ function Project({
     const FLING_DECAY_PER_MS = 0.995;
     const FLING_MIN_VELOCITY = 0.05;
     const FLING_MAX_VELOCITY = 5;
-    const VELOCITY_SMOOTHING = 0.3;
+    const VELOCITY_WINDOW_MS = 80;
+    const STALE_LIFT_MS = 100;
     let touchY = 0;
-    let touchTime = 0;
     let velocity = 0;
     let onThumb = false;
     let flingRaf = 0;
+    let touchTarget = 0;
+    let samples: { t: number; y: number }[] = [];
+    const touchScrollBy = (dy: number) => {
+      touchTarget = clampTo(touchTarget + dy);
+      window.scrollTo(0, touchTarget);
+    };
     const stopFling = () => {
       if (flingRaf) cancelAnimationFrame(flingRaf);
       flingRaf = 0;
@@ -405,40 +410,43 @@ function Project({
       stopFling();
       onThumb = !!(e.target as HTMLElement).closest?.(".fill-scrollbar");
       touchY = e.touches[0].clientY;
-      touchTime = performance.now();
+      touchTarget = window.scrollY;
       velocity = 0;
+      samples = [{ t: performance.now(), y: touchY }];
     };
     const onTouchMove = (e: TouchEvent) => {
       if (onThumb) return;
       e.preventDefault();
       const y = e.touches[0].clientY;
       const now = performance.now();
-      const dy = touchY - y;
-      const dt = now - touchTime;
-      if (dt > 0) {
-        const sample = Math.max(
-          Math.min(dy / dt, FLING_MAX_VELOCITY),
-          -FLING_MAX_VELOCITY,
-        );
-        velocity =
-          velocity * (1 - VELOCITY_SMOOTHING) + sample * VELOCITY_SMOOTHING;
-      }
-      scrollBy(dy);
+      touchScrollBy(touchY - y);
       touchY = y;
-      touchTime = now;
+      samples.push({ t: now, y });
+      while (samples.length > 2 && now - samples[0].t > VELOCITY_WINDOW_MS) {
+        samples.shift();
+      }
     };
     const onTouchEnd = (e: TouchEvent) => {
-      if (onThumb || e.touches.length > 0) return;
-      const sinceLastMove = performance.now() - touchTime;
-      if (sinceLastMove > 100 || Math.abs(velocity) < FLING_MIN_VELOCITY) return;
+      if (onThumb || e.touches.length > 0 || samples.length < 2) return;
+      const newest = samples[samples.length - 1];
+      const oldest = samples[0];
+      const span = newest.t - oldest.t;
+      const liftDelay = performance.now() - newest.t;
+      if (span <= 0 || liftDelay > STALE_LIFT_MS) return;
+      const raw = (oldest.y - newest.y) / span;
+      velocity = Math.max(
+        Math.min(raw, FLING_MAX_VELOCITY),
+        -FLING_MAX_VELOCITY,
+      );
+      if (Math.abs(velocity) < FLING_MIN_VELOCITY) return;
       let lastFrame = performance.now();
       const step = (now: number) => {
         const dt = Math.min(now - lastFrame, 32);
         lastFrame = now;
-        const before = window.scrollY;
-        scrollBy(velocity * dt);
+        const before = touchTarget;
+        touchScrollBy(velocity * dt);
         velocity *= Math.pow(FLING_DECAY_PER_MS, dt);
-        const stalled = window.scrollY === before;
+        const stalled = touchTarget === before;
         if (stalled || Math.abs(velocity) < FLING_MIN_VELOCITY) {
           flingRaf = 0;
           return;
