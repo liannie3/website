@@ -388,15 +388,64 @@ function Project({
             : e.deltaY;
       scrollBy(dy);
     };
+    const FLING_DECAY_PER_MS = 0.995;
+    const FLING_MIN_VELOCITY = 0.05;
+    const FLING_MAX_VELOCITY = 5;
+    const VELOCITY_SMOOTHING = 0.3;
     let touchY = 0;
+    let touchTime = 0;
+    let velocity = 0;
+    let onThumb = false;
+    let flingRaf = 0;
+    const stopFling = () => {
+      if (flingRaf) cancelAnimationFrame(flingRaf);
+      flingRaf = 0;
+    };
     const onTouchStart = (e: TouchEvent) => {
+      stopFling();
+      onThumb = !!(e.target as HTMLElement).closest?.(".fill-scrollbar");
       touchY = e.touches[0].clientY;
+      touchTime = performance.now();
+      velocity = 0;
     };
     const onTouchMove = (e: TouchEvent) => {
+      if (onThumb) return;
       e.preventDefault();
       const y = e.touches[0].clientY;
-      scrollBy(touchY - y);
+      const now = performance.now();
+      const dy = touchY - y;
+      const dt = now - touchTime;
+      if (dt > 0) {
+        const sample = Math.max(
+          Math.min(dy / dt, FLING_MAX_VELOCITY),
+          -FLING_MAX_VELOCITY,
+        );
+        velocity =
+          velocity * (1 - VELOCITY_SMOOTHING) + sample * VELOCITY_SMOOTHING;
+      }
+      scrollBy(dy);
       touchY = y;
+      touchTime = now;
+    };
+    const onTouchEnd = (e: TouchEvent) => {
+      if (onThumb || e.touches.length > 0) return;
+      const sinceLastMove = performance.now() - touchTime;
+      if (sinceLastMove > 100 || Math.abs(velocity) < FLING_MIN_VELOCITY) return;
+      let lastFrame = performance.now();
+      const step = (now: number) => {
+        const dt = Math.min(now - lastFrame, 32);
+        lastFrame = now;
+        const before = window.scrollY;
+        scrollBy(velocity * dt);
+        velocity *= Math.pow(FLING_DECAY_PER_MS, dt);
+        const stalled = window.scrollY === before;
+        if (stalled || Math.abs(velocity) < FLING_MIN_VELOCITY) {
+          flingRaf = 0;
+          return;
+        }
+        flingRaf = requestAnimationFrame(step);
+      };
+      flingRaf = requestAnimationFrame(step);
     };
     const onScroll = () => {
       clamp();
@@ -454,6 +503,8 @@ function Project({
     window.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("touchstart", onTouchStart, { passive: true });
     window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("touchcancel", onTouchEnd, { passive: true });
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
     thumb?.addEventListener("pointerdown", onPointerDown);
@@ -468,9 +519,12 @@ function Project({
         window.scrollTo(0, Math.max(maxScroll, 0));
       }
       if (resizeRaf) cancelAnimationFrame(resizeRaf);
+      stopFling();
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("touchcancel", onTouchEnd);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       thumb?.removeEventListener("pointerdown", onPointerDown);
