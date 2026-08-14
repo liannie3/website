@@ -369,7 +369,7 @@ function Project({
     const clampTo = (y: number) =>
       Math.min(Math.max(y, bounds.min), bounds.max);
     const clamp = () => {
-      if (openingRef.current) return;
+      if (openingRef.current || flingRaf) return;
       if (window.scrollY < bounds.min) window.scrollTo(0, bounds.min);
       else if (window.scrollY > bounds.max) window.scrollTo(0, bounds.max);
     };
@@ -387,11 +387,12 @@ function Project({
             : e.deltaY;
       scrollBy(dy);
     };
-    const FLING_DECAY_PER_MS = 0.995;
-    const FLING_MIN_VELOCITY = 0.05;
-    const FLING_MAX_VELOCITY = 5;
-    const VELOCITY_WINDOW_MS = 80;
-    const STALE_LIFT_MS = 100;
+    const FLING_DECAY_PER_MS = 0.9975;
+    const FLING_GAIN = 1.35;
+    const FLING_MIN_VELOCITY = 0.02;
+    const FLING_MAX_VELOCITY = 8;
+    const VELOCITY_WINDOW_MS = 100;
+    const STALE_LIFT_MS = 150;
     let touchY = 0;
     let velocity = 0;
     let onThumb = false;
@@ -422,7 +423,7 @@ function Project({
       touchScrollBy(touchY - y);
       touchY = y;
       samples.push({ t: now, y });
-      while (samples.length > 2 && now - samples[0].t > VELOCITY_WINDOW_MS) {
+      while (samples.length > 2 && now - samples[1].t > VELOCITY_WINDOW_MS) {
         samples.shift();
       }
     };
@@ -433,7 +434,7 @@ function Project({
       const span = newest.t - oldest.t;
       const liftDelay = performance.now() - newest.t;
       if (span <= 0 || liftDelay > STALE_LIFT_MS) return;
-      const raw = (oldest.y - newest.y) / span;
+      const raw = ((oldest.y - newest.y) / span) * FLING_GAIN;
       velocity = Math.max(
         Math.min(raw, FLING_MAX_VELOCITY),
         -FLING_MAX_VELOCITY,
