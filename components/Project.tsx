@@ -615,7 +615,7 @@ function Project({
   );
 
   return (
-    <div
+    <article
       ref={cardRef}
       className={`project-card relative flex flex-col justify-start${
         canInteract ? " project-interactive" : ""
@@ -757,7 +757,7 @@ function Project({
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }
 
