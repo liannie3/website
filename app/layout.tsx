@@ -28,15 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${onest.variable} antialiased`}
+        className={`${onest.variable} antialiased w-full bg-foreground text-foreground mx-auto flex min-h-dvh max-w-[48.125rem] flex-col gap-8 p-4 font-onest`}
       >
-        <div className="w-full bg-background text-foreground">
-          <div className="mx-auto flex min-h-dvh w-full max-w-[48.125rem] flex-col items-center gap-8 p-4 font-onest">
             <Header />
             {children}
             <Footer />
-          </div>
-        </div>
         <Analytics />
       </body>
     </html>
