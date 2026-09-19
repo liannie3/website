@@ -11,7 +11,7 @@ function Task({status, task}: TaskProps) {
     const [wobble, setWobble] = useState(false);
 
     return (
-        <div className="flex gap-2">
+        <li className="flex gap-2">
             <Image
                 src={status == "notdone" ? "/fish.svg" : "/fishingpole.svg"}
                 alt=""
@@ -25,8 +25,7 @@ function Task({status, task}: TaskProps) {
             <div>
             {status == "notdone" ? task : <s>{task}</s>}
             </div>
-            <br></br>
-        </div>
+        </li>
     )
 }
 
