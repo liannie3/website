@@ -3,8 +3,10 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+}
 
-  --font-onest: var(--font-onest), sans-serif;
+@theme inline {
+  --font-onest: var(--font-onest-source), sans-serif;
 }
 
 /*
@@ -34,7 +36,6 @@
 :root {
   --background: #f7f4ee;
   --foreground: #111f5b;
-  --font-default: var(--font-onest), Arial, Helvetica, sans-serif;
 }
 
 .dark {

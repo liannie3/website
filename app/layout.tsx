@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 const onest = localFont({
   src: '../public/fonts/Onest.woff2',
-  variable: "--font-onest",
+  variable: "--font-onest-source",
   display: 'swap'
 })
 
