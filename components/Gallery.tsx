@@ -90,32 +90,45 @@ export default function Gallery() {
       ))}
 
       {selectedImage && (
-        <div
-          className="fixed inset-0 flex items-center justify-center bg-black/80"
-          onClick={() => setSelectedImage(null)}
+        <dialog
+          ref={dialogRef}
+          aria-label="Gallery preview"
+          tabIndex={-1}
+          className="fixed inset-0 m-0 h-dvh max-h-none w-dvw max-w-none border-0 bg-black/80 p-0"
+          onCancel={(event) => {
+            event.preventDefault();
+            setSelectedImage(null);
+          }}
         >
-          <div className="relative bg-white p-0">
-            {isVideo(selectedImage) ? (
-              <video
-                src={selectedImage}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="h-auto max-h-[95vh] w-auto max-w-[95vw] object-contain"
-              />
-            ) : (
-              <Image
-                src={selectedImage}
-                alt="Selected"
-                width={1200}
-                height={1200}
-                sizes="95vw"
-                className="h-auto max-h-[95vh] w-auto max-w-[95vw] object-contain"
-              />
-            )}
+          <div
+            className="flex h-full w-full items-center justify-center"
+            onClick={(event) => {
+              if (event.target === event.currentTarget) setSelectedImage(null);
+            }}
+          >
+            <div className="relative bg-white">
+              {isVideo(selectedImage) ? (
+                <video
+                  src={selectedImage}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-auto max-h-[95vh] w-auto max-w-[95vw] object-contain"
+                />
+              ) : (
+                <Image
+                  src={selectedImage}
+                  alt="Selected"
+                  width={1200}
+                  height={1200}
+                  sizes="95vw"
+                  className="h-auto max-h-[95vh] w-auto max-w-[95vw] object-contain"
+                />
+              )}
+            </div>
           </div>
-        </div>
+        </dialog>
       )}
     </div>
   );
