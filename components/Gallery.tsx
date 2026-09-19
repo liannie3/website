@@ -50,10 +50,24 @@ function GalleryVideo({
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const openerRef = useRef<HTMLButtonElement>(null);
   const [skipIntro] = useState(() => introPlayed);
   useEffect(() => {
     introPlayed = true;
   }, []);
+
+  useEffect(() => {
+    if (!selectedImage) return;
+
+    const dialog = dialogRef.current;
+    dialog?.showModal();
+    dialog?.focus();
+    return () => {
+      if (dialog?.open) dialog.close();
+      openerRef.current?.focus({ preventScroll: true });
+    };
+  }, [selectedImage]);
 
   const columns = [
     images.filter((_, i) => i % 2 === 0),
@@ -65,11 +79,14 @@ export default function Gallery() {
       {columns.map((column, colIndex) => (
         <div key={colIndex} className="flex flex-1 flex-col gap-4">
           {column.map((item, rowIndex) => (
-            <div
+            <button
               key={item.src}
               className="gallery-item relative cursor-pointer"
               style={{ animationDelay: `${0.25 + rowIndex * 0.15}s` }}
-              onClick={() => setSelectedImage(item.src)}
+              onClick={(event) => {
+                openerRef.current = event.currentTarget;
+                setSelectedImage(item.src);
+              }}
             >
               {isVideo(item.src) ? (
                 <GalleryVideo src={item.src} w={item.w} h={item.h} />
@@ -84,7 +101,7 @@ export default function Gallery() {
                 />
               )}
               <div className="absolute inset-0 overflow-hidden bg-[hsl(0,0%,0.4%,0.15)] opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
-            </div>
+            </button>
           ))}
         </div>
       ))}
