@@ -119,9 +119,7 @@ export default function Gallery() {
         >
           <div
             className="flex h-full w-full items-center justify-center"
-            onClick={(event) => {
-              if (event.target === event.currentTarget) setSelectedImage(null);
-            }}
+            onClick={() => setSelectedImage(null)}
           >
             <div className="relative bg-white">
               {isVideo(selectedImage) ? (
