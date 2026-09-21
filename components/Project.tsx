@@ -4,7 +4,6 @@ import Link from "next/link";
 import { createPortal } from "react-dom";
 import {
   CSSProperties,
-  Fragment,
   ReactNode,
   useCallback,
   useEffect,
@@ -743,13 +742,7 @@ function Project({
             )}
             <div className="project-details-clip">
               <div ref={detailsRef} id={detailsId} className="project-details">
-                {Array.isArray(details)
-                  ? details.map((item, i) => (
-                      <Fragment key={i}>
-                        {typeof item === "string" ? <p>{item}</p> : item}
-                      </Fragment>
-                    ))
-                  : details}
+                {typeof details === "string" ? <p>{details}</p> : details}
                   
               </div>
             </div>
